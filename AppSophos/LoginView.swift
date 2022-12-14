@@ -15,33 +15,27 @@ struct LoginView: View {
     var body: some View {
         VStack {
             Image("sophosLogin")
+                .padding(.horizontal, 50)
+                .padding(.bottom, 20)
             Text("Ingresa tus datos para acceder")
                 .fontWeight(.bold)
-                .frame(width: 180, height: 35)
-                .font(.caption)
+                .font(.footnote)
                 .foregroundColor(Color("loginColor"))
                 .multilineTextAlignment(.center)
                 
             HStack {
-                
                 Image(systemName: "person.crop.circle.fill")
                     .foregroundColor(Color("loginColor"))
                     .padding(.vertical, 10)
                     .padding(.horizontal, 15)
                     .overlay(
-                        Rectangle()
-                            .frame(width: 1,
-                                   height: nil,
-                                   alignment: .trailing)
-                            .foregroundColor(
-                                Color("loginColor")
-                            ),
+                        Divider()
+                            .frame(width: 1.0)
+                            .background(Color("loginColor")),
                         alignment: .trailing
                     )
-                
                 TextField("Email", text: $email)
                     .foregroundColor(Color("loginColor"))
-                    
             }
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
@@ -50,23 +44,23 @@ struct LoginView: View {
             .padding(.vertical, 20)
             
             HStack {
-                
                 Image("keyIcon")
                     .overlay(
-                        Rectangle()
-                            .frame(width: 1,
-                                   height: nil,
-                                   alignment: .trailing)
-                            .foregroundColor(
-                                Color("loginColor")
-                            ),
+                        Divider()
+                            .frame(width: 1.0)
+                            .background(Color("loginColor")),
                         alignment: .trailing
                     )
                 SecureField("Password", text: $password)
                     .foregroundColor(Color("loginColor"))
-                Image("Mask")
-                .padding(.vertical, 10)
-                .padding(.horizontal, 15)
+                Button {
+                    
+                    
+                } label: {
+                    Image("Mask")
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 15)
+                }
             }
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
@@ -81,7 +75,8 @@ struct LoginView: View {
                     .foregroundColor(.white)
                     .fontWeight(.bold)
                     .font(.footnote)
-                    .frame(width: 280, height: 40)
+                    .frame(width: 338.0, height: 40)
+                    .padding(.horizontal, 15)
                     
             }
             .background(
@@ -96,37 +91,23 @@ struct LoginView: View {
             } label: {
                 HStack {
                     Image("fingerprint")
-                        .padding(.horizontal)
+                        .padding(.leading)
                     Text("Ingresar con huella")
                         .foregroundColor(Color("loginColor"))
                         .fontWeight(.bold)
                         .font(.footnote)
-                        .frame(width: 280, height: 40)
+                        .frame(width: 310, height: 40)
+                        .padding(.trailing, 15)
                 }
             }
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
                     .strokeBorder(Color("loginColor"))
-            
                 )
             .padding(.top, 19)
         }
         .padding(.horizontal, 15)
         
-    }
-}
-
-struct Rec: Shape {
-    
-
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        path.move(to: CGPoint(x: 200, y: 100))
-        path.addLine(to: CGPoint(x: 100, y: 300))
-        path.addLine(to: CGPoint(x: 300, y: 300))
-        path.addLine(to: CGPoint(x: 200, y: 100))
-       
-        return path
     }
 }
 
