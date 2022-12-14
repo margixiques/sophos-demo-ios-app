@@ -15,6 +15,12 @@
 		CB63352B294922F300CD86E5 /* AppSophosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63352A294922F300CD86E5 /* AppSophosUITests.swift */; };
 		CB63352D294922F300CD86E5 /* AppSophosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63352C294922F300CD86E5 /* AppSophosUITestsLaunchTests.swift */; };
 		CB63353A2949249C00CD86E5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6335392949249C00CD86E5 /* LoginView.swift */; };
+		CB93BCC9294A0F1500732C72 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB93BCC8294A0F1500732C72 /* LoginViewModel.swift */; };
+		CB93BCCB294A120000732C72 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB93BCCA294A120000732C72 /* MenuView.swift */; };
+		CB93BCD4294A211600732C72 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB93BCD3294A211600732C72 /* APIService.swift */; };
+		CB93BCD6294A22F300732C72 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB93BCD5294A22F300732C72 /* Credentials.swift */; };
+		CB93BCD8294A23C500732C72 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB93BCD7294A23C500732C72 /* UIApplication+Extension.swift */; };
+		CB93BCDA294A31DB00732C72 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB93BCD9294A31DB00732C72 /* Authentication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +52,12 @@
 		CB63352A294922F300CD86E5 /* AppSophosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSophosUITests.swift; sourceTree = "<group>"; };
 		CB63352C294922F300CD86E5 /* AppSophosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSophosUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CB6335392949249C00CD86E5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CB93BCC8294A0F1500732C72 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		CB93BCCA294A120000732C72 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		CB93BCD3294A211600732C72 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		CB93BCD5294A22F300732C72 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		CB93BCD7294A23C500732C72 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		CB93BCD9294A31DB00732C72 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +109,12 @@
 			isa = PBXGroup;
 			children = (
 				CB63350F294922F100CD86E5 /* AppSophosApp.swift */,
-				CB633511294922F100CD86E5 /* ContentView.swift */,
+				CB93BCD9294A31DB00732C72 /* Authentication.swift */,
+				CB93BCD2294A20AA00732C72 /* Services */,
+				CB93BCCC294A13F900732C72 /* Models */,
+				CB93BCC7294A0EDB00732C72 /* Views */,
 				CB633513294922F300CD86E5 /* Assets.xcassets */,
 				CB633515294922F300CD86E5 /* Preview Content */,
-				CB6335392949249C00CD86E5 /* LoginView.swift */,
 			);
 			path = AppSophos;
 			sourceTree = "<group>";
@@ -128,6 +142,42 @@
 				CB63352C294922F300CD86E5 /* AppSophosUITestsLaunchTests.swift */,
 			);
 			path = AppSophosUITests;
+			sourceTree = "<group>";
+		};
+		CB93BCC7294A0EDB00732C72 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB633511294922F100CD86E5 /* ContentView.swift */,
+				CB6335392949249C00CD86E5 /* LoginView.swift */,
+				CB93BCC8294A0F1500732C72 /* LoginViewModel.swift */,
+				CB93BCCA294A120000732C72 /* MenuView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CB93BCCC294A13F900732C72 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CB93BCD5294A22F300732C72 /* Credentials.swift */,
+				CB93BCCD294A140100732C72 /* Request */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CB93BCCD294A140100732C72 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		CB93BCD2294A20AA00732C72 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CB93BCD3294A211600732C72 /* APIService.swift */,
+				CB93BCD7294A23C500732C72 /* UIApplication+Extension.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,9 +310,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB93BCCB294A120000732C72 /* MenuView.swift in Sources */,
+				CB93BCC9294A0F1500732C72 /* LoginViewModel.swift in Sources */,
 				CB63353A2949249C00CD86E5 /* LoginView.swift in Sources */,
+				CB93BCD6294A22F300732C72 /* Credentials.swift in Sources */,
+				CB93BCD8294A23C500732C72 /* UIApplication+Extension.swift in Sources */,
 				CB633512294922F100CD86E5 /* ContentView.swift in Sources */,
+				CB93BCD4294A211600732C72 /* APIService.swift in Sources */,
 				CB633510294922F100CD86E5 /* AppSophosApp.swift in Sources */,
+				CB93BCDA294A31DB00732C72 /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +480,7 @@
 				DEVELOPMENT_TEAM = 523W826V48;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Allow Face ID to access stored credentials";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -453,6 +510,7 @@
 				DEVELOPMENT_TEAM = 523W826V48;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Allow Face ID to access stored credentials";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
