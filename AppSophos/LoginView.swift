@@ -30,8 +30,15 @@ struct LoginView: View {
                     .padding(.horizontal, 15)
                     .overlay(
                         Rectangle()
-                            .stroke(Color("loginColor"), lineWidth: 1)
+                            .frame(width: 1,
+                                   height: nil,
+                                   alignment: .trailing)
+                            .foregroundColor(
+                                Color("loginColor")
+                            ),
+                        alignment: .trailing
                     )
+                
                 TextField("Email", text: $email)
                     .foregroundColor(Color("loginColor"))
                     
@@ -47,7 +54,13 @@ struct LoginView: View {
                 Image("keyIcon")
                     .overlay(
                         Rectangle()
-                            .stroke(Color("loginColor"), lineWidth: 1)
+                            .frame(width: 1,
+                                   height: nil,
+                                   alignment: .trailing)
+                            .foregroundColor(
+                                Color("loginColor")
+                            ),
+                        alignment: .trailing
                     )
                 SecureField("Password", text: $password)
                     .foregroundColor(Color("loginColor"))
@@ -69,28 +82,33 @@ struct LoginView: View {
                     .fontWeight(.bold)
                     .font(.footnote)
                     .frame(width: 280, height: 40)
-                    .background(
+                    
+            }
+            .background(
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color("loginColor"))
                 )
-            }
             .padding(.top, 39)
             
             Button {
                 
                 
             } label: {
-                Text("Ingresar con huella")
-                    .foregroundColor(Color("loginColor"))
-                    .fontWeight(.bold)
-                    .font(.footnote)
-                    .frame(width: 280, height: 40)
-                    .overlay(
+                HStack {
+                    Image("fingerprint")
+                        .padding(.horizontal)
+                    Text("Ingresar con huella")
+                        .foregroundColor(Color("loginColor"))
+                        .fontWeight(.bold)
+                        .font(.footnote)
+                        .frame(width: 280, height: 40)
+                }
+            }
+            .overlay(
                 RoundedRectangle(cornerRadius: 10)
                     .strokeBorder(Color("loginColor"))
             
                 )
-            }
             .padding(.top, 19)
         }
         .padding(.horizontal, 15)
