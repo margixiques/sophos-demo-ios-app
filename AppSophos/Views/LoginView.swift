@@ -11,92 +11,119 @@ struct LoginView: View {
     
     @StateObject private var loginVM = LoginViewModel()
     @EnvironmentObject var authentication: Authentication
+    @State private var showPassword: Bool = false
+    @FocusState private var inFocus: Field?
+    @State private var maskedIconName = "eye.fill"
+    
+    enum Field {
+        case plain
+        case secure
+    }
     
     var body: some View {
-        VStack {
-            Image("sophosLogin")
-                .padding(.horizontal, 50)
-                .padding(.bottom, 20)
-            Text("Ingresa tus datos para acceder")
-                .fontWeight(.bold)
-                .font(.footnote)
-                .foregroundColor(Color("loginColor"))
-                .multilineTextAlignment(.center)
-            
-            HStack {
-                Image(systemName: "person.crop.circle.fill")
-                    .foregroundColor(Color("loginColor"))
-                    .padding(.vertical, 10)
-                    .padding(.horizontal, 15)
-                    .overlay(
-                        Divider()
-                            .frame(width: 1.0)
-                            .background(Color("loginColor")),
-                        alignment: .trailing
-                    )
-                TextField("Email", text: $loginVM.credentials.email)
-                    .keyboardType(.emailAddress)
-                    .foregroundColor(Color("loginColor"))
-                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                    .disableAutocorrection(true)
-            }
-            .overlay(
-                RoundedRectangle(cornerRadius: 8)
-                    .stroke(Color("loginColor"), lineWidth: 1)
-            )
-            .padding(.vertical, 20)
-            
-            HStack {
-                Image("keyIcon")
-                    .overlay(
-                        Divider()
-                            .frame(width: 1.0)
-                            .background(Color("loginColor")),
-                        alignment: .trailing
-                    )
-                SecureField("Password", text: $loginVM.credentials.password)
-                    .foregroundColor(Color("loginColor"))
-                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                Button {
-                    
-                    
-                } label: {
-                    Image("Mask")
-                        .padding(.vertical, 10)
-                        .padding(.horizontal, 15)
-                }
-            }
-            .overlay(
-                RoundedRectangle(cornerRadius: 8)
-                    .stroke(Color("loginColor"), lineWidth: 1)
-            )
-            if loginVM.showProgressView {
-                ProgressView()
-            }
-            
-            Button {
-                loginVM.login { sucess in
-                    authentication.updateValidation(sucess: sucess)
-                }
-                
-            } label: {
-                Text("Ingresar")
-                    .foregroundColor(.white)
+        ZStack {
+            Color("mainBackgroundColor")
+            VStack {
+                Image("sophosLogin")
+                    .padding(.horizontal, 50)
+                    .padding(.bottom, 20)
+                Text("Ingresa tus datos para acceder")
                     .fontWeight(.bold)
                     .font(.footnote)
-                    .padding(.horizontal, 15)
+                    .foregroundColor(Color("loginColor"))
+                    .multilineTextAlignment(.center)
                 
-            }
-            .frame(maxWidth: .infinity, maxHeight: 40)
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color("loginColor"))
+                // MARK: - email
+                HStack {
+                    Image(systemName: "person.crop.circle.fill")
+                        .foregroundColor(Color("loginColor"))
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 15)
+                        .overlay(
+                            Divider()
+                                .frame(width: 1.0)
+                                .background(Color("loginColor")),
+                            alignment: .trailing
+                        )
+                    TextField("Email", text: $loginVM.credentials.email)
+                        .keyboardType(.emailAddress)
+                        .foregroundColor(Color("loginColor"))
+                        .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                        .disableAutocorrection(true)
+                }
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color("loginColor"), lineWidth: 1)
+                )
+                .padding(.vertical, 20)
                 
-            )
-            .padding(.top, 39)
-            .disabled(loginVM.loginDisabled)
-            
-            if authentication.biometricType() != .none {
+                
+                // MARK: - Password
+                HStack {
+                    Image("keyIcon")
+                        .overlay(
+                            Divider()
+                                .frame(width: 1.0)
+                                .background(Color("loginColor")),
+                            alignment: .trailing
+                        )
+                    
+                    if showPassword {
+                        TextField("Password", text: $loginVM.credentials.password)
+                            .focused($inFocus, equals: .plain)
+                    } else {
+                        SecureField("Password", text: $loginVM.credentials.password)
+                            .foregroundColor(Color("loginColor"))
+                            .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                            .focused($inFocus, equals: .secure)
+                    }
+                    
+                    Button {
+                        self.showPassword.toggle()
+                        inFocus = showPassword ? .plain : .secure
+                        maskedIconName = showPassword ? "eye.slash.fill" : "eye.fill"
+                        
+                    } label: {
+                        Image(systemName: maskedIconName)
+                            .tint(Color("loginColor"))
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 15)
+                    }
+                    
+                    
+                }
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color("loginColor"), lineWidth: 1)
+                )
+                if loginVM.showProgressView {
+                    ProgressView()
+                }
+                
+                
+                // MARK: - Buttons
+                Button {
+                    loginVM.login { sucess in
+                        authentication.updateValidation(sucess: sucess)
+                    }
+                    
+                } label: {
+                    Text("Ingresar")
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                        .font(.footnote)
+                        .padding(.horizontal, 15)
+                    
+                }
+                .frame(maxWidth: .infinity, maxHeight: 40)
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color("loginColor"))
+                    
+                )
+                .padding(.top, 39)
+                .disabled(loginVM.loginDisabled)
+                
                 Button {
                     
                     
@@ -120,14 +147,14 @@ struct LoginView: View {
                         
                 )
                 .padding(.top, 19)
-                
+            }
+            .padding(.horizontal, 15)
+            .disabled(loginVM.showProgressView)
+            .alert(item: $loginVM.error) { error in
+                Alert(title: Text("Invalid Login"), message: Text(error.localizedDescription))
             }
         }
-        .padding(.horizontal, 15)
-        .disabled(loginVM.showProgressView)
-        .alert(item: $loginVM.error) { error in
-            Alert(title: Text("Invalid Login"), message: Text(error.localizedDescription))
-        }
+        
     }
 }
 
