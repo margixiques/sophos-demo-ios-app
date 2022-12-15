@@ -15,6 +15,7 @@
 		CB63352B294922F300CD86E5 /* AppSophosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63352A294922F300CD86E5 /* AppSophosUITests.swift */; };
 		CB63352D294922F300CD86E5 /* AppSophosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63352C294922F300CD86E5 /* AppSophosUITestsLaunchTests.swift */; };
 		CB63353A2949249C00CD86E5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6335392949249C00CD86E5 /* LoginView.swift */; };
+		CB89F150294AC8FE00190634 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB89F14F294AC8FE00190634 /* User.swift */; };
 		CB93BCC9294A0F1500732C72 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB93BCC8294A0F1500732C72 /* LoginViewModel.swift */; };
 		CB93BCCB294A120000732C72 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB93BCCA294A120000732C72 /* MenuView.swift */; };
 		CB93BCD4294A211600732C72 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB93BCD3294A211600732C72 /* APIService.swift */; };
@@ -52,6 +53,7 @@
 		CB63352A294922F300CD86E5 /* AppSophosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSophosUITests.swift; sourceTree = "<group>"; };
 		CB63352C294922F300CD86E5 /* AppSophosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSophosUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CB6335392949249C00CD86E5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CB89F14F294AC8FE00190634 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CB93BCC8294A0F1500732C72 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		CB93BCCA294A120000732C72 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		CB93BCD3294A211600732C72 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				CB93BCD5294A22F300732C72 /* Credentials.swift */,
 				CB93BCCD294A140100732C72 /* Request */,
+				CB89F14F294AC8FE00190634 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				CB633512294922F100CD86E5 /* ContentView.swift in Sources */,
 				CB93BCD4294A211600732C72 /* APIService.swift in Sources */,
 				CB633510294922F100CD86E5 /* AppSophosApp.swift in Sources */,
+				CB89F150294AC8FE00190634 /* User.swift in Sources */,
 				CB93BCDA294A31DB00732C72 /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,8 +488,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -514,8 +518,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

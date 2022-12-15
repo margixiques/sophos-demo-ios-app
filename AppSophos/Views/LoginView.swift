@@ -24,6 +24,8 @@ struct LoginView: View {
         ZStack {
             Color("mainBackgroundColor")
             VStack {
+                
+                // MARK: - Header
                 Image("sophosLogin")
                     .padding(.horizontal, 50)
                     .padding(.bottom, 20)
@@ -33,7 +35,7 @@ struct LoginView: View {
                     .foregroundColor(Color("loginColor"))
                     .multilineTextAlignment(.center)
                 
-                // MARK: - email
+                // MARK: - Email
                 HStack {
                     Image(systemName: "person.crop.circle.fill")
                         .foregroundColor(Color("loginColor"))
@@ -71,6 +73,8 @@ struct LoginView: View {
                     if showPassword {
                         TextField("Password", text: $loginVM.credentials.password)
                             .focused($inFocus, equals: .plain)
+                            .foregroundColor(Color("loginColor"))
+                            .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                     } else {
                         SecureField("Password", text: $loginVM.credentials.password)
                             .foregroundColor(Color("loginColor"))

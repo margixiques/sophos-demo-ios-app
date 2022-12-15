@@ -18,8 +18,11 @@ class LoginViewModel: ObservableObject {
     
     func login(completion: @escaping (Bool) -> Void) {
         showProgressView = true
+        URLSession.shared.dataTask(with: <#T##URLRequest#>) { <#Data?#>, <#URLResponse?#>, <#Error?#> in
+            <#code#>
+        }
         APIService.shared.login(credentials: credentials) { [unowned self](result:Result<Bool, Authentication.AuthenticationError>) in
-        showProgressView = false
+            showProgressView = false
             switch result {
             case .success:
                 completion(true)
@@ -28,35 +31,9 @@ class LoginViewModel: ObservableObject {
                 error = authError
                 completion(false)
             }
-    }
-    
-    
-    
-    }
-    
-    private func isValidEmailAddress(emailAddressString: String) -> Bool {
-        
-        var returnValue = true
-        let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
-        
-        do {
-            let regex = try NSRegularExpression(pattern: emailRegEx)
-            let nsString = emailAddressString as NSString
-            let results = regex.matches(in: emailAddressString, range: NSRange(location: 0, length: nsString.length))
-            
-            if results.count == 0
-            {
-                returnValue = false
-            }
-            
-        } catch let error as NSError {
-            print("invalid regex: \(error.localizedDescription)")
-            returnValue = false
         }
         
-        return  returnValue
     }
-    
 }
 
 
