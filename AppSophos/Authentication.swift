@@ -48,9 +48,9 @@ class Authentication: ObservableObject {
         }
     }
     
-    func updateValidation(sucess: Bool) {
+    func updateValidation(success: Bool) {
         withAnimation {
-            isValidated = sucess
+            isValidated = success
         }
     }
     
@@ -70,7 +70,9 @@ class Authentication: ObservableObject {
     }
     
     func requestBiometricUnlock(completion: @escaping (Result<Credentials, AuthenticationError>) -> Void) {
-        let credentials: Credentials? = nil
+       // let credentials: Credentials? = Credentials(email: "anything", password: "password")
+        //let credentials: Credentials? = nil
+        let credentials = KeychainStorage.getCredentials()
         guard let credentials = credentials else {
             completion(.failure(.credentialsNotSaved))
             return

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB3B429E294B822800B2B6DB /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = CB3B429D294B822800B2B6DB /* SwiftKeychainWrapper */; };
+		CB3B42A0294B86B300B2B6DB /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B429F294B86B300B2B6DB /* KeychainStorage.swift */; };
 		CB633510294922F100CD86E5 /* AppSophosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63350F294922F100CD86E5 /* AppSophosApp.swift */; };
 		CB633512294922F100CD86E5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB633511294922F100CD86E5 /* ContentView.swift */; };
 		CB633514294922F300CD86E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB633513294922F300CD86E5 /* Assets.xcassets */; };
@@ -42,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB3B429F294B86B300B2B6DB /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
 		CB63350C294922F100CD86E5 /* AppSophos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppSophos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB63350F294922F100CD86E5 /* AppSophosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSophosApp.swift; sourceTree = "<group>"; };
 		CB633511294922F100CD86E5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB3B429E294B822800B2B6DB /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +183,7 @@
 			children = (
 				CB93BCD3294A211600732C72 /* APIService.swift */,
 				CB93BCD7294A23C500732C72 /* UIApplication+Extension.swift */,
+				CB3B429F294B86B300B2B6DB /* KeychainStorage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -199,6 +204,9 @@
 			dependencies = (
 			);
 			name = AppSophos;
+			packageProductDependencies = (
+				CB3B429D294B822800B2B6DB /* SwiftKeychainWrapper */,
+			);
 			productName = AppSophos;
 			productReference = CB63350C294922F100CD86E5 /* AppSophos.app */;
 			productType = "com.apple.product-type.application";
@@ -271,6 +279,9 @@
 				Base,
 			);
 			mainGroup = CB633503294922F100CD86E5;
+			packageReferences = (
+				CB3B429C294B822800B2B6DB /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+			);
 			productRefGroup = CB63350D294922F100CD86E5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -321,6 +332,7 @@
 				CB633512294922F100CD86E5 /* ContentView.swift in Sources */,
 				CB93BCD4294A211600732C72 /* APIService.swift in Sources */,
 				CB633510294922F100CD86E5 /* AppSophosApp.swift in Sources */,
+				CB3B42A0294B86B300B2B6DB /* KeychainStorage.swift in Sources */,
 				CB89F150294AC8FE00190634 /* User.swift in Sources */,
 				CB93BCDA294A31DB00732C72 /* Authentication.swift in Sources */,
 			);
@@ -649,6 +661,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CB3B429C294B822800B2B6DB /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CB3B429D294B822800B2B6DB /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB3B429C294B822800B2B6DB /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CB633504294922F100CD86E5 /* Project object */;
 }

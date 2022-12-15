@@ -12,8 +12,8 @@ struct MenuView: View {
         NavigationView {
             VStack {
                 Image("PlantillaCorporativa")
-                
-                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                    
+                Spacer()
             }
             .navigationTitle("NAME")
         }

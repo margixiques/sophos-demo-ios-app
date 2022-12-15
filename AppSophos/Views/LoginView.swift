@@ -110,16 +110,16 @@ struct LoginView: View {
                     Task {
                         do {
                             let user = try await loginVM.login()
-                            authentication.updateValidation(sucess: true)
+                            authentication.updateValidation(success: user.access)
                         } catch {
                             
                         }
-                     
+                        
                     }
-
-//                    loginVM.login { sucess in
-//                        authentication.updateValidation(sucess: sucess)
-//                    }
+                    
+                    //                    loginVM.login { sucess in
+                    //                        authentication.updateValidation(sucess: sucess)
+                    //                    }
                     
                 } label: {
                     Text("Ingresar")
@@ -127,6 +127,7 @@ struct LoginView: View {
                         .fontWeight(.bold)
                         .font(.footnote)
                         .padding(.horizontal, 15)
+                    
                     
                 }
                 .frame(maxWidth: .infinity, maxHeight: 40)
@@ -139,8 +140,23 @@ struct LoginView: View {
                 .disabled(loginVM.loginDisabled)
                 
                 Button {
-                    
-                    
+                    authentication.requestBiometricUnlock { (result: Result<Credentials, Authentication.AuthenticationError>) in
+                        switch result {
+                        case .success(let credentials):
+                            loginVM.credentials = credentials
+                            Task {
+                                do {
+                                    let user = try await loginVM.login()
+                                    authentication.updateValidation(success: user.access)
+                                } catch {
+                                    
+                                }
+                                
+                            }
+                        case .failure(let error):
+                            loginVM.error = error
+                        }
+                    }
                 } label: {
                     HStack {
                         Image(systemName: authentication.biometricType() == .face ? "faceid" : "touchid")
@@ -157,15 +173,24 @@ struct LoginView: View {
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .strokeBorder(Color("loginColor"))
-                        
-                        
+                    
+                    
                 )
                 .padding(.top, 19)
             }
             .padding(.horizontal, 15)
             .disabled(loginVM.showProgressView)
             .alert(item: $loginVM.error) { error in
-                Alert(title: Text("Invalid Login"), message: Text(error.localizedDescription))
+                if error == .credentialsNotSaved {
+                    return Alert(title: Text("Credentials Not Saved"),
+                                 message: Text(error.localizedDescription),
+                                 primaryButton: .default(Text("OK"), action: {
+                                    loginVM.storeCredentialsNext = true
+                                 }),
+                                 secondaryButton: .cancel())
+                } else {
+                    return Alert(title: Text("Invalid Login"), message: Text(error.localizedDescription))
+                }
             }
         }
         

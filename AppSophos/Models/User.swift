@@ -8,12 +8,12 @@
 import Foundation
 
 // MARK: - User
-struct User: Codable, Identifiable {
-    let id: String
-    let name: String
-    let lastName: String
+struct User: Codable {
+    let id: String?
+    let name: String?
+    let lastName: String?
     let access: Bool
-    let admin: Bool
+    let admin: Bool?
 
     enum CodingKeys: String, CodingKey {
         case id

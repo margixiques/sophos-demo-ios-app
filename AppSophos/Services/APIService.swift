@@ -39,6 +39,7 @@ extension Endpoint {
 
 private extension URL {
     static func makeForEndpoint(_ endpoint: String) -> URL {
-        URL(string:  APIService.shared.baseURL + endpoint)!
+        let urlString = APIService.shared.baseURL + endpoint
+        return URL(string: urlString)!
     }
 }
