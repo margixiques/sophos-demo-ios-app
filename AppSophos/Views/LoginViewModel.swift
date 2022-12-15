@@ -16,11 +16,19 @@ class LoginViewModel: ObservableObject {
         credentials.email.isEmpty || credentials.password.isEmpty
     }
     
+    func login() async throws -> User {
+        showProgressView = true
+        let url = Endpoint.user(email: credentials.email, password: credentials.password).url
+        
+        let (data, response) = try await URLSession.shared.data(from: url)
+        
+        let user = try JSONDecoder().decode(User.self, from: data)
+        showProgressView = false
+        return user
+    }
+    
     func login(completion: @escaping (Bool) -> Void) {
         showProgressView = true
-        URLSession.shared.dataTask(with: <#T##URLRequest#>) { <#Data?#>, <#URLResponse?#>, <#Error?#> in
-            <#code#>
-        }
         APIService.shared.login(credentials: credentials) { [unowned self](result:Result<Bool, Authentication.AuthenticationError>) in
             showProgressView = false
             switch result {

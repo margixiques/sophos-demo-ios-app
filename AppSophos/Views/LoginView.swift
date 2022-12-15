@@ -107,9 +107,19 @@ struct LoginView: View {
                 
                 // MARK: - Buttons
                 Button {
-                    loginVM.login { sucess in
-                        authentication.updateValidation(sucess: sucess)
+                    Task {
+                        do {
+                            let user = try await loginVM.login()
+                            authentication.updateValidation(sucess: true)
+                        } catch {
+                            
+                        }
+                     
                     }
+
+//                    loginVM.login { sucess in
+//                        authentication.updateValidation(sucess: sucess)
+//                    }
                     
                 } label: {
                     Text("Ingresar")
