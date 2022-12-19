@@ -26,36 +26,29 @@ struct LoginView: View {
             VStack {
                 
                 // MARK: - Header
-                Image("sophosLogin")
-                    .padding(.horizontal, 50)
-                    .padding(.bottom, 20)
-                Text("Ingresa tus datos para acceder")
-                    .fontWeight(.bold)
-                    .font(.footnote)
-                    .foregroundColor(Color("loginColor"))
-                    .multilineTextAlignment(.center)
+                LoginHeaderView()
                 
                 // MARK: - Email
                 HStack {
                     Image(systemName: "person.crop.circle.fill")
-                        .foregroundColor(Color("loginColor"))
+                        .foregroundColor(Color("textColorPurple"))
                         .padding(.vertical, 10)
                         .padding(.horizontal, 15)
                         .overlay(
                             Divider()
                                 .frame(width: 1.0)
-                                .background(Color("loginColor")),
+                                .background(Color("textColorPurple")),
                             alignment: .trailing
                         )
                     TextField("Email", text: $loginVM.credentials.email)
                         .keyboardType(.emailAddress)
-                        .foregroundColor(Color("loginColor"))
+                        .foregroundColor(Color("textColorPurple"))
                         .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                         .disableAutocorrection(true)
                 }
                 .overlay(
                     RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color("loginColor"), lineWidth: 1)
+                        .stroke(Color("textColorPurple"), lineWidth: 1)
                 )
                 .padding(.vertical, 20)
                 
@@ -66,18 +59,18 @@ struct LoginView: View {
                         .overlay(
                             Divider()
                                 .frame(width: 1.0)
-                                .background(Color("loginColor")),
+                                .background(Color("textColorPurple")),
                             alignment: .trailing
                         )
                     
                     if showPassword {
                         TextField("Password", text: $loginVM.credentials.password)
                             .focused($inFocus, equals: .plain)
-                            .foregroundColor(Color("loginColor"))
+                            .foregroundColor(Color("textColorPurple"))
                             .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                     } else {
                         SecureField("Password", text: $loginVM.credentials.password)
-                            .foregroundColor(Color("loginColor"))
+                            .foregroundColor(Color("textColorPurple"))
                             .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                             .focused($inFocus, equals: .secure)
                     }
@@ -89,16 +82,14 @@ struct LoginView: View {
                         
                     } label: {
                         Image(systemName: maskedIconName)
-                            .tint(Color("loginColor"))
+                            .tint(Color("textColorPurple"))
                             .padding(.vertical, 10)
                             .padding(.horizontal, 15)
                     }
-                    
-                    
                 }
                 .overlay(
                     RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color("loginColor"), lineWidth: 1)
+                        .stroke(Color("textColorPurple"), lineWidth: 1)
                 )
                 if loginVM.showProgressView {
                     ProgressView()
@@ -117,10 +108,6 @@ struct LoginView: View {
                         
                     }
                     
-                    //                    loginVM.login { sucess in
-                    //                        authentication.updateValidation(sucess: sucess)
-                    //                    }
-                    
                 } label: {
                     Text("Ingresar")
                         .foregroundColor(.white)
@@ -133,7 +120,7 @@ struct LoginView: View {
                 .frame(maxWidth: .infinity, maxHeight: 40)
                 .background(
                     RoundedRectangle(cornerRadius: 10)
-                        .fill(Color("loginColor"))
+                        .fill(Color("textColorPurple"))
                     
                 )
                 .padding(.top, 39)
@@ -160,10 +147,10 @@ struct LoginView: View {
                 } label: {
                     HStack {
                         Image(systemName: authentication.biometricType() == .face ? "faceid" : "touchid")
-                            .tint(Color("loginColor"))
+                            .tint(Color("textColorPurple"))
                             .padding(.trailing, 23)
                         Text(authentication.biometricType() == .face ? "Ingresar con Face ID" : "Ingresar con huella")
-                            .foregroundColor(Color("loginColor"))
+                            .foregroundColor(Color("textColorPurple"))
                             .fontWeight(.bold)
                             .font(.footnote)
                             .padding(.trailing, 15)
@@ -172,7 +159,7 @@ struct LoginView: View {
                 .frame(maxWidth: .infinity, maxHeight: 40)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .strokeBorder(Color("loginColor"))
+                        .strokeBorder(Color("textColorPurple"))
                     
                     
                 )
@@ -204,4 +191,6 @@ struct LoginView_Previews: PreviewProvider {
             .environmentObject(Authentication())
     }
 }
+
+
 

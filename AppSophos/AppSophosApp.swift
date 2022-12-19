@@ -9,11 +9,13 @@ import SwiftUI
 
 @main
 struct AppSophosApp: App {
+   
     @StateObject var authentication = Authentication()
+    
     var body: some Scene {
         WindowGroup {
             if authentication.isValidated {
-                MenuView()
+                MenuView(user: User(id: nil, name: "Margi", lastName: nil, access: true, admin: nil))
                     .environmentObject(authentication)
             } else {
                 LoginView()

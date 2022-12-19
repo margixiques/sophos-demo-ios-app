@@ -82,9 +82,9 @@ class Authentication: ObservableObject {
         let canEvaluate = context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error)
         if let error = error {
             switch error.code {
-            case -6:
+            case 1:
                 completion(.failure(.deniedAccess))
-            case -7:
+            case 2:
                 if context.biometryType == .faceID {
                     completion(.failure(.noFaceEnrolled))
                 } else {
