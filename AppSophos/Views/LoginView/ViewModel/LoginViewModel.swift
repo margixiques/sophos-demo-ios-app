@@ -17,6 +17,10 @@ import Foundation
         credentials.email.isEmpty || credentials.password.isEmpty
     }
     
+    private func saveName(_ name: String) {
+        UserDefaults.standard.set(name, forKey: "userName")
+    }
+    
     func login() async throws -> User {
         showProgressView = true
         let url = Endpoint.user(email: credentials.email, password: credentials.password).url
@@ -36,6 +40,7 @@ import Foundation
             }
             
         }
+        saveName(user.name ?? "")
         showProgressView = false
         return user
     }

@@ -15,7 +15,7 @@ struct AppSophosApp: App {
     var body: some Scene {
         WindowGroup {
             if authentication.isValidated {
-                MenuView(user: User(id: nil, name: "Margi", lastName: nil, access: true, admin: nil))
+                MenuView()
                     .environmentObject(authentication)
             } else {
                 LoginView()
