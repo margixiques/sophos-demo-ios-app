@@ -12,23 +12,28 @@ struct SendButtonsView: View {
     var body: some View {
         
         VStack (spacing: 25){
-            Button {
-                
-            } label: {
-                HStack{
-                    Image(systemName: "icloud.and.arrow.up")
-                    Text("Documento")
-                }
-            }
             
-            .fontWeight(.heavy)
-            .font(.subheadline)
-            .foregroundColor(.white)
-            .frame(width: 160, height: 40)
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color("colorPink"))
-            ) .offset(x: -78, y: 0)
+            HStack {
+                Button {
+                    
+                } label: {
+                    HStack{
+                        Image(systemName: "icloud.and.arrow.up")
+                        Text("Documento")
+                    }
+                }
+                
+                .fontWeight(.heavy)
+                .font(.subheadline)
+                .foregroundColor(.white)
+                .frame(width: 160, height: 40)
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color("colorPink"))
+                )
+                
+                Spacer()
+            }
             
             Button {
                 

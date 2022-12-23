@@ -10,7 +10,6 @@ import LocalAuthentication
 
 class Authentication: ObservableObject {
     @Published var isValidated = false
-    //@Published var isAuthorized = false
     
     enum BiometricType {
         case none

@@ -1,20 +1,16 @@
 //
-//  IdNumberView.swift
+//  SendDocIdView.swift
 //  AppSophos
 //
-//  Created by Margarita Xiques on 19/12/22.
+//  Created by Margarita Xiques on 22/12/22.
 //
 
 import SwiftUI
 
-struct IdNumberView: View {
-    
-    
-    @State var identification: String
-    
+struct SendDocIdView: View {
+    @Binding var identification: String
     var body: some View {
         HStack{
-            
             Image(systemName: "person.text.rectangle")
                 .resizable()
                 .frame(width: 24, height: 20)
@@ -25,11 +21,5 @@ struct IdNumberView: View {
         Divider()
             .frame(height: 1)
             .overlay(.black)
-    }
-}
-
-struct IdNumberView_Previews: PreviewProvider {
-    static var previews: some View {
-        IdNumberView(identification: "")
     }
 }
