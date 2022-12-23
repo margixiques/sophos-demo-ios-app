@@ -23,20 +23,26 @@ struct MenuButtonView: View {
                     Text("Enviar documentos")
                 }
                 Button {
-                    self.navigateTo = AnyView(SendDocView())
+                    self.navigateTo = AnyView(WatchDocView())
                     self.isNavigationActive = true
                 } label: {
                     Text("Ver documentos")
                 }
                 Button {
-                    self.navigateTo = AnyView(SendDocView())
+                    self.navigateTo = AnyView(OfficesView())
                     self.isNavigationActive = true
                 } label: {
                     Text("Oficinas")
                 }
                 Button("Modo nocturno", action: darkMode)
                 Button("Idioma Inglés", action: englishLanguage)
-                Button("Cerrar sesión", action: logout)
+                Button {
+                self.navigateTo = AnyView(LoginView())
+                self.isNavigationActive = true
+            } label: {
+                Text("Cerrar sesión")
+            }
+                //("Cerrar sesión", action: logout)
             } label: {
                 Image(systemName: "list.dash")
             }

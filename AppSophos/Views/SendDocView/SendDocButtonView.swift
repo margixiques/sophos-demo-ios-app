@@ -6,25 +6,28 @@
 //
 
 import SwiftUI
+import class PhotosUI.PHPickerViewController
 
 struct SendDocButtonView: View {
+  
+    
     var body: some View {
         VStack{
             
             Text("Envío de documentación")
-                .font(.callout)
+                .font(.title3)
                 .fontWeight(.heavy)
                 .offset(x: -57, y: 0)
             Button {
-                
+               
             } label: {
                 Image(systemName: "camera")
                     .resizable()
                     .frame(width: 60, height: 50)
                     .tint(.black)
             }
-        }
         
+        }
     }
 }
 

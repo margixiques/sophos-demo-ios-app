@@ -98,11 +98,11 @@ extension MenuType {
     var destination: some View {
         switch self {
         case .sendDocument:
-            return SendDocView()
+            return AnyView(SendDocView())
         case .watchDocument:
-            return SendDocView()
+            return AnyView(WatchDocView())
         case .offices:
-            return SendDocView()
+            return AnyView(OfficesView())
         }
     }
    

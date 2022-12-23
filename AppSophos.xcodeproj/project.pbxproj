@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB3A84AE2955F75A004BD11F /* WatchDocView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3A84AD2955F759004BD11F /* WatchDocView.swift */; };
+		CB3A84B12955FA76004BD11F /* OfficesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3A84B02955FA76004BD11F /* OfficesView.swift */; };
 		CB3B429E294B822800B2B6DB /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = CB3B429D294B822800B2B6DB /* SwiftKeychainWrapper */; };
 		CB3B42A0294B86B300B2B6DB /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B429F294B86B300B2B6DB /* KeychainStorage.swift */; };
 		CB633510294922F100CD86E5 /* AppSophosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63350F294922F100CD86E5 /* AppSophosApp.swift */; };
@@ -62,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB3A84AD2955F759004BD11F /* WatchDocView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDocView.swift; sourceTree = "<group>"; };
+		CB3A84B02955FA76004BD11F /* OfficesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficesView.swift; sourceTree = "<group>"; };
 		CB3B429F294B86B300B2B6DB /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
 		CB63350C294922F100CD86E5 /* AppSophos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppSophos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB63350F294922F100CD86E5 /* AppSophosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSophosApp.swift; sourceTree = "<group>"; };
@@ -127,6 +131,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB3A84AC2955E352004BD11F /* WatchDocView */ = {
+			isa = PBXGroup;
+			children = (
+				CB3A84AD2955F759004BD11F /* WatchDocView.swift */,
+			);
+			path = WatchDocView;
+			sourceTree = "<group>";
+		};
+		CB3A84AF2955FA62004BD11F /* Offices */ = {
+			isa = PBXGroup;
+			children = (
+				CB3A84B02955FA76004BD11F /* OfficesView.swift */,
+			);
+			path = Offices;
+			sourceTree = "<group>";
+		};
 		CB633503294922F100CD86E5 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +209,8 @@
 		CB93BCC7294A0EDB00732C72 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CB3A84AF2955FA62004BD11F /* Offices */,
+				CB3A84AC2955E352004BD11F /* WatchDocView */,
 				CB9EBDD12950C01A009CA465 /* LoginView */,
 				CBD3D54B29522D16002074F8 /* SendDocView */,
 				CB9EBDCA2950BE36009CA465 /* MenuView */,
@@ -405,9 +427,11 @@
 				CBD3D58B295392C1002074F8 /* LoginButtonsView.swift in Sources */,
 				CBD3D55029522D16002074F8 /* SendDocIdTypeView.swift in Sources */,
 				CBD3D589295391D1002074F8 /* LoginPasswordView.swift in Sources */,
+				CB3A84AE2955F75A004BD11F /* WatchDocView.swift in Sources */,
 				CB9EBDD02950BF15009CA465 /* BoxView.swift in Sources */,
 				CBD3D5A129555B7F002074F8 /* BiometricButtonLabel.swift in Sources */,
 				CB9EBDCE2950BEB6009CA465 /* MenuButtonView.swift in Sources */,
+				CB3A84B12955FA76004BD11F /* OfficesView.swift in Sources */,
 				CBD3D58D2953AAD1002074F8 /* SendButtonsView.swift in Sources */,
 				CB93BCCB294A120000732C72 /* MenuView.swift in Sources */,
 				CBD3D599295548B7002074F8 /* SendDocIdView.swift in Sources */,

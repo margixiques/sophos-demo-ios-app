@@ -21,91 +21,93 @@ struct LoginView: View {
     }
     
     var body: some View {
-        ZStack {
-            Color("mainBackgroundColor")
-            VStack {
-                
-                // MARK: - Header
-                LoginHeaderView()
-                
-                // MARK: - Email
-                LoginEmailView(email: $loginVM.credentials.email)
-                
-                // MARK: - Password
-                LoginPasswordView(password: $loginVM.credentials.password)
-                
-                if loginVM.showProgressView {
-                    ProgressView()
-                }
-                
-                // MARK: - Buttons
-                Button {
-        
-                    Task {
-                        do {
-                            let user = try await loginVM.login()
-                            authentication.updateValidation(success: user.access)
-                        } catch {
-                            fatalError()
-                        }
+        NavigationStack {
+            ZStack {
+                Color("mainBackgroundColor")
+                VStack {
+                    
+                    // MARK: - Header
+                    LoginHeaderView()
+                    
+                    // MARK: - Email
+                    LoginEmailView(email: $loginVM.credentials.email)
+                    
+                    // MARK: - Password
+                    LoginPasswordView(password: $loginVM.credentials.password)
+                    
+                    if loginVM.showProgressView {
+                        ProgressView()
                     }
-                } label: {
-                    Text("Ingresar")
-                        .foregroundColor(.white)
-                        .fontWeight(.bold)
-                        .font(.footnote)
-                        .padding(.horizontal, 15)
-                }
-                .frame(maxWidth: .infinity, maxHeight: 40)
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(Color("textColorPurple"))
-                )
-                .padding(.top, 39)
-                .disabled(loginVM.loginDisabled)
-                
-                Button {
-                    authentication.requestBiometricUnlock { (result: Result<Credentials, Authentication.AuthenticationError>) in
-                        switch result {
-                        case .success(let credentials):
-                            loginVM.credentials = credentials
-                            Task {
-                                do {
-                                    let user = try await loginVM.login()
-                                    authentication.updateValidation(success: user.access)
-                                } catch {
-                                    
-                                }
+                    
+                    // MARK: - Buttons
+                    Button {
+            
+                        Task {
+                            do {
+                                let user = try await loginVM.login()
+                                authentication.updateValidation(success: user.access)
+                            } catch {
+                                fatalError()
                             }
-                        case .failure(let error):
-                            loginVM.error = error
                         }
+                    } label: {
+                        Text("Ingresar")
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                            .font(.footnote)
+                            .padding(.horizontal, 15)
                     }
-                } label: {
-                    BiometricButtonStyle()
+                    .frame(maxWidth: .infinity, maxHeight: 40)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color("textColorPurple"))
+                    )
+                    .padding(.top, 39)
+                    .disabled(loginVM.loginDisabled)
+                    
+                    Button {
+                        authentication.requestBiometricUnlock { (result: Result<Credentials, Authentication.AuthenticationError>) in
+                            switch result {
+                            case .success(let credentials):
+                                loginVM.credentials = credentials
+                                Task {
+                                    do {
+                                        let user = try await loginVM.login()
+                                        authentication.updateValidation(success: user.access)
+                                    } catch {
+                                        
+                                    }
+                                }
+                            case .failure(let error):
+                                loginVM.error = error
+                            }
+                        }
+                    } label: {
+                        BiometricButtonStyle()
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: 40)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .strokeBorder(Color("textColorPurple"))
+                    )
+                    .padding(.top, 19)
                 }
-                .frame(maxWidth: .infinity, maxHeight: 40)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .strokeBorder(Color("textColorPurple"))
-                )
-                .padding(.top, 19)
-            }
-            .disabled(loginVM.showProgressView)
-            .alert(item: $loginVM.error) { error in
-                if error == .credentialsNotSaved {
-                    return Alert(title: Text("Credentials Not Saved"),
-                                 message: Text(error.localizedDescription),
-                                 primaryButton: .default(Text("OK"), action: {
-                        loginVM.storeCredentialsNext = true
-                    }),
-                                 secondaryButton: .cancel())
-                } else {
-                    return Alert(title: Text("Invalid Login"), message: Text(error.localizedDescription))
+                .disabled(loginVM.showProgressView)
+                .alert(item: $loginVM.error) { error in
+                    if error == .credentialsNotSaved {
+                        return Alert(title: Text("Credentials Not Saved"),
+                                     message: Text(error.localizedDescription),
+                                     primaryButton: .default(Text("OK"), action: {
+                            loginVM.storeCredentialsNext = true
+                        }),
+                                     secondaryButton: .cancel())
+                    } else {
+                        return Alert(title: Text("Invalid Login"), message: Text(error.localizedDescription))
+                    }
                 }
-            }
-        }.padding(.horizontal, 15)
-        .environmentObject(authentication)
+            }.padding(.horizontal, 15)
+                .environmentObject(authentication)
+        } .navigationBarBackButtonHidden(true)
     }
 }
 

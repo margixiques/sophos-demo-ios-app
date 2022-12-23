@@ -11,9 +11,10 @@ struct SendDocView: View {
     
     @ObservedObject var vm = DocFormViewModel()
     
+    
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
             VStack (spacing: 20){
                 Group {
                     SendDocHeaderView()
@@ -42,9 +43,7 @@ struct SendDocView: View {
                 Spacer()
                 
             }.padding(.horizontal, 20)
-            
-            
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 

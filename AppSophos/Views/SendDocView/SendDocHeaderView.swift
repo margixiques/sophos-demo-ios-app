@@ -9,13 +9,19 @@ import SwiftUI
 
 struct SendDocHeaderView: View {
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
         
         VStack (spacing: 20){
             HStack{
                 HStack{
-                    Image(systemName: "arrow.left")
-                    Text("Regresar")
+                    Button {
+                        self.presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Image(systemName: "arrow.left")
+                        Text("Regresar")
+                    }   
                 }
                 
                 Spacer()

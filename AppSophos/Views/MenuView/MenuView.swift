@@ -13,7 +13,7 @@ struct MenuView: View {
    
    var body: some View {
       
-      NavigationView{
+      NavigationStack{
          ScrollView {
             VStack {
                HStack{
@@ -36,8 +36,7 @@ struct MenuView: View {
                userName = UserDefaults.standard.string(forKey: "userName") ?? "Algo"
             }
          }
-      }
-      
+      }.navigationBarBackButtonHidden(true)
    }
 }
 
