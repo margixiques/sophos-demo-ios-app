@@ -9,8 +9,8 @@ import SwiftUI
 
 struct LoginEmailView: View {
     
-    @StateObject private var loginVM = LoginViewModel()
-    @EnvironmentObject var authentication: Authentication
+    @Binding var email: String
+    
     var body: some View {
         HStack {
             Image(systemName: "person.crop.circle.fill")
@@ -23,7 +23,7 @@ struct LoginEmailView: View {
                         .background(Color("textColorPurple")),
                     alignment: .trailing
                 )
-            TextField("Email", text: $loginVM.credentials.email)
+            TextField("Email", text: $email)
                 .keyboardType(.emailAddress)
                 .foregroundColor(Color("textColorPurple"))
                 .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
@@ -37,9 +37,3 @@ struct LoginEmailView: View {
     }
 }
 
-struct LoginEmailView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginEmailView()
-        
-    }
-}

@@ -29,75 +29,18 @@ struct LoginView: View {
                 LoginHeaderView()
                 
                 // MARK: - Email
-                HStack {
-                    Image(systemName: "person.crop.circle.fill")
-                        .foregroundColor(Color("textColorPurple"))
-                        .padding(.vertical, 10)
-                        .padding(.horizontal, 15)
-                        .overlay(
-                            Divider()
-                                .frame(width: 1.0)
-                                .background(Color("textColorPurple")),
-                            alignment: .trailing
-                        )
-                    TextField("Email", text: $loginVM.credentials.email)
-                        .keyboardType(.emailAddress)
-                        .foregroundColor(Color("textColorPurple"))
-                        .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                        .disableAutocorrection(true)
-                }
-                .overlay(
-                    RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color("textColorPurple"), lineWidth: 1)
-                )
-                .padding(.vertical, 20)
-                
+                LoginEmailView(email: $loginVM.credentials.email)
                 
                 // MARK: - Password
-                HStack {
-                    Image("keyIcon")
-                        .overlay(
-                            Divider()
-                                .frame(width: 1.0)
-                                .background(Color("textColorPurple")),
-                            alignment: .trailing
-                        )
-                    
-                    if showPassword {
-                        TextField("Password", text: $loginVM.credentials.password)
-                            .focused($inFocus, equals: .plain)
-                            .foregroundColor(Color("textColorPurple"))
-                            .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                    } else {
-                        SecureField("Password", text: $loginVM.credentials.password)
-                            .foregroundColor(Color("textColorPurple"))
-                            .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                            .focused($inFocus, equals: .secure)
-                    }
-                    
-                    Button {
-                        self.showPassword.toggle()
-                        inFocus = showPassword ? .plain : .secure
-                        maskedIconName = showPassword ? "eye.slash.fill" : "eye.fill"
-                        
-                    } label: {
-                        Image(systemName: maskedIconName)
-                            .tint(Color("textColorPurple"))
-                            .padding(.vertical, 10)
-                            .padding(.horizontal, 15)
-                    }
-                }
-                .overlay(
-                    RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color("textColorPurple"), lineWidth: 1)
-                )
+                LoginPasswordView(password: $loginVM.credentials.password)
+                
                 if loginVM.showProgressView {
                     ProgressView()
                 }
                 
                 // MARK: - Buttons
                 Button {
-                    
+        
                     Task {
                         do {
                             let user = try await loginVM.login()
@@ -133,23 +76,13 @@ struct LoginView: View {
                                 } catch {
                                     
                                 }
-                                
                             }
                         case .failure(let error):
                             loginVM.error = error
                         }
                     }
                 } label: {
-                    HStack {
-                        Image(systemName: authentication.biometricType() == .face ? "faceid" : "touchid")
-                            .tint(Color("textColorPurple"))
-                            .padding(.trailing, 23)
-                        Text(authentication.biometricType() == .face ? "Ingresar con Face ID" : "Ingresar con huella")
-                            .foregroundColor(Color("textColorPurple"))
-                            .fontWeight(.bold)
-                            .font(.footnote)
-                            .padding(.trailing, 15)
-                    }
+                    BiometricButtonStyle()
                 }
                 .frame(maxWidth: .infinity, maxHeight: 40)
                 .overlay(
@@ -171,7 +104,8 @@ struct LoginView: View {
                     return Alert(title: Text("Invalid Login"), message: Text(error.localizedDescription))
                 }
             }
-        } . padding(.horizontal, 15)
+        }.padding(.horizontal, 15)
+        .environmentObject(authentication)
     }
 }
 
@@ -183,6 +117,8 @@ struct LoginView_Previews: PreviewProvider {
             .environmentObject(Authentication())
     }
 }
+
+
 
 
 

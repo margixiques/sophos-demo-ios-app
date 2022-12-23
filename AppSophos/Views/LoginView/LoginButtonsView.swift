@@ -94,11 +94,3 @@ struct LoginButtonsView: View {
         }
     }
 }
-
-
-struct LoginButtonsView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginButtonsView()
-            .environmentObject(Authentication())
-    }
-}

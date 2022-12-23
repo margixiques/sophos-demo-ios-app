@@ -41,6 +41,7 @@
 		CBD3D59B29554E33002074F8 /* SendDocFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD3D59A29554E33002074F8 /* SendDocFieldView.swift */; };
 		CBD3D59D29554E55002074F8 /* SendDocCityFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD3D59C29554E55002074F8 /* SendDocCityFieldView.swift */; };
 		CBD3D59F29554F9D002074F8 /* SendDocButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD3D59E29554F9D002074F8 /* SendDocButtonView.swift */; };
+		CBD3D5A129555B7F002074F8 /* BiometricButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD3D5A029555B7F002074F8 /* BiometricButtonLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		CBD3D59A29554E33002074F8 /* SendDocFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDocFieldView.swift; sourceTree = "<group>"; };
 		CBD3D59C29554E55002074F8 /* SendDocCityFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDocCityFieldView.swift; sourceTree = "<group>"; };
 		CBD3D59E29554F9D002074F8 /* SendDocButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDocButtonView.swift; sourceTree = "<group>"; };
+		CBD3D5A029555B7F002074F8 /* BiometricButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricButtonLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 				CBD3D5862953906A002074F8 /* LoginEmailView.swift */,
 				CBD3D588295391D1002074F8 /* LoginPasswordView.swift */,
 				CBD3D58A295392C1002074F8 /* LoginButtonsView.swift */,
+				CBD3D5A029555B7F002074F8 /* BiometricButtonLabel.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				CBD3D55029522D16002074F8 /* SendDocIdTypeView.swift in Sources */,
 				CBD3D589295391D1002074F8 /* LoginPasswordView.swift in Sources */,
 				CB9EBDD02950BF15009CA465 /* BoxView.swift in Sources */,
+				CBD3D5A129555B7F002074F8 /* BiometricButtonLabel.swift in Sources */,
 				CB9EBDCE2950BEB6009CA465 /* MenuButtonView.swift in Sources */,
 				CBD3D58D2953AAD1002074F8 /* SendButtonsView.swift in Sources */,
 				CB93BCCB294A120000732C72 /* MenuView.swift in Sources */,

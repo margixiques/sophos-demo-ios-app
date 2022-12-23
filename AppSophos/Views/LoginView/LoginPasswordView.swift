@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct LoginPasswordView: View {
-    @StateObject private var loginVM = LoginViewModel()
-    @EnvironmentObject var authentication: Authentication
+    
+    @Binding var password: String
     @State private var showPassword: Bool = false
     @FocusState private var inFocus: Field?
     @State private var maskedIconName = "eye.fill"
@@ -30,12 +30,12 @@ struct LoginPasswordView: View {
                 )
             
             if showPassword {
-                TextField("Password", text: $loginVM.credentials.password)
+                TextField("Password", text: $password)
                     .focused($inFocus, equals: .plain)
                     .foregroundColor(Color("textColorPurple"))
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
             } else {
-                SecureField("Password", text: $loginVM.credentials.password)
+                SecureField("Password", text: $password)
                     .foregroundColor(Color("textColorPurple"))
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                     .focused($inFocus, equals: .secure)
@@ -57,13 +57,5 @@ struct LoginPasswordView: View {
             RoundedRectangle(cornerRadius: 8)
                 .stroke(Color("textColorPurple"), lineWidth: 1)
         )
-    }
-}
-
-
-struct LoginPasswordView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginPasswordView()
-        
     }
 }
