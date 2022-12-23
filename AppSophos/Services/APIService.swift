@@ -8,20 +8,13 @@
 import Foundation
 
 class APIService {
-    static let shared = APIService()
-    let baseURL = "https://6w33tkx4f9.execute-api.us-east-1.amazonaws.com/"
     
-    func login(credentials: Credentials,
-               completion: @escaping (Result<Bool, Authentication.AuthenticationError>) -> Void) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            if credentials.password == "password" {
-                completion(.success(true))
-            } else {
-                completion(.failure(.invalidCredentials))
-            }
-        }
-    }
+    //Singleton instance
+    static let shared = APIService()
+    
+    let baseURL = "https://6w33tkx4f9.execute-api.us-east-1.amazonaws.com/"
 }
+
 
 enum Endpoint {
     case user(email: String, password: String)

@@ -95,33 +95,28 @@ struct LoginView: View {
                     ProgressView()
                 }
                 
-                
                 // MARK: - Buttons
                 Button {
+                    
                     Task {
                         do {
                             let user = try await loginVM.login()
                             authentication.updateValidation(success: user.access)
                         } catch {
-                            
+                            fatalError()
                         }
-                        
                     }
-                    
                 } label: {
                     Text("Ingresar")
                         .foregroundColor(.white)
                         .fontWeight(.bold)
                         .font(.footnote)
                         .padding(.horizontal, 15)
-                    
-                    
                 }
                 .frame(maxWidth: .infinity, maxHeight: 40)
                 .background(
                     RoundedRectangle(cornerRadius: 10)
                         .fill(Color("textColorPurple"))
-                    
                 )
                 .padding(.top, 39)
                 .disabled(loginVM.loginDisabled)
@@ -160,29 +155,26 @@ struct LoginView: View {
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .strokeBorder(Color("textColorPurple"))
-                    
-                    
                 )
                 .padding(.top, 19)
             }
-            .padding(.horizontal, 15)
             .disabled(loginVM.showProgressView)
             .alert(item: $loginVM.error) { error in
                 if error == .credentialsNotSaved {
                     return Alert(title: Text("Credentials Not Saved"),
                                  message: Text(error.localizedDescription),
                                  primaryButton: .default(Text("OK"), action: {
-                                    loginVM.storeCredentialsNext = true
-                                 }),
+                        loginVM.storeCredentialsNext = true
+                    }),
                                  secondaryButton: .cancel())
                 } else {
                     return Alert(title: Text("Invalid Login"), message: Text(error.localizedDescription))
                 }
             }
-        }
-        
+        } . padding(.horizontal, 15)
     }
 }
+
 
 
 struct LoginView_Previews: PreviewProvider {
@@ -191,6 +183,8 @@ struct LoginView_Previews: PreviewProvider {
             .environmentObject(Authentication())
     }
 }
+
+
 
 
 

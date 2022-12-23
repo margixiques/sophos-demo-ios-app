@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 @MainActor class LoginViewModel: ObservableObject {
     @Published var credentials = Credentials()
@@ -13,19 +14,35 @@ import Foundation
     @Published var error: Authentication.AuthenticationError?
     @Published var storeCredentialsNext = false
     
+    @EnvironmentObject var authentication: Authentication
+    
     var loginDisabled: Bool {
         credentials.email.isEmpty || credentials.password.isEmpty
     }
+
     
     private func saveName(_ name: String) {
         UserDefaults.standard.set(name, forKey: "userName")
     }
     
-    func login() async throws -> User {
+    func performLogin() {
+        Task {
+            do {
+                let user = try await login()
+                authentication.updateValidation(success: user.access)
+            } catch {
+                fatalError()
+            }
+        }
+    }
+    
+     func login() async throws -> User {
         showProgressView = true
         let url = Endpoint.user(email: credentials.email, password: credentials.password).url
         
         let (data, response) = try await URLSession.shared.data(from: url)
+         
+    
         
 //        guard (response as? HTTPURLResponse)?.statusCode == 200
 //        else { fatalError("Error while fetching data") }
@@ -44,6 +61,7 @@ import Foundation
         showProgressView = false
         return user
     }
+      
 }
 
 

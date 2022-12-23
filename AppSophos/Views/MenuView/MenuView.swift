@@ -12,20 +12,33 @@ struct MenuView: View {
    @State var userName: String = ""
    
    var body: some View {
-      VStack {
-         TopView(name: userName)
-            .padding(.top, 40)
-         BackgroundView()
-         Spacer()
-         VStack (spacing: 42){
-            ForEach(MenuType.allCases, id: \.rawValue) { BoxView(menuType: $0)}
-         } .offset(x:0, y: -90)
-      }.onAppear {
-         userName = UserDefaults.standard.string(forKey: "userName") ?? "Algo"
+      
+      NavigationView{
+         ScrollView {
+            VStack {
+               HStack{
+                  Text(userName)
+                  Spacer()
+                  MenuButtonView()
+               }  .font(.title3)
+                  .fontWeight(.heavy)
+                  .foregroundColor(Color("textColorPurple"))
+                  .padding()
+                  .padding(.top, 25)
+               MenuBackgroundView()
+                  .padding(.bottom, 40)
+               VStack (spacing: 45){
+                  ForEach(MenuType.allCases, id: \.rawValue) {
+                     BoxView(menuType: $0)
+                  }
+               }.padding(.bottom, 40)
+            }.onAppear {
+               userName = UserDefaults.standard.string(forKey: "userName") ?? "Algo"
+            }
+         }
       }
    }
 }
-
 
 struct MenuView_Previews: PreviewProvider {
    static var previews: some View {

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BackgroundView: View {
+struct MenuBackgroundView: View {
    var body: some View {
       
       ZStack {
@@ -36,6 +36,6 @@ struct BackgroundView: View {
 
 struct BackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundView()
+        MenuBackgroundView()
     }
 }

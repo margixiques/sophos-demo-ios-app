@@ -23,10 +23,18 @@
 		CB93BCD4294A211600732C72 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB93BCD3294A211600732C72 /* APIService.swift */; };
 		CB93BCD6294A22F300732C72 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB93BCD5294A22F300732C72 /* Credentials.swift */; };
 		CB93BCDA294A31DB00732C72 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB93BCD9294A31DB00732C72 /* Authentication.swift */; };
-		CB9EBDCC2950BE87009CA465 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EBDCB2950BE86009CA465 /* BackgroundView.swift */; };
-		CB9EBDCE2950BEB6009CA465 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EBDCD2950BEB6009CA465 /* TopView.swift */; };
+		CB9EBDCC2950BE87009CA465 /* MenuBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EBDCB2950BE86009CA465 /* MenuBackgroundView.swift */; };
+		CB9EBDCE2950BEB6009CA465 /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EBDCD2950BEB6009CA465 /* MenuButtonView.swift */; };
 		CB9EBDD02950BF15009CA465 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EBDCF2950BF15009CA465 /* BoxView.swift */; };
 		CB9EBDD42950C545009CA465 /* LoginHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EBDD32950C545009CA465 /* LoginHeaderView.swift */; };
+		CBD3D55029522D16002074F8 /* IdMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD3D54C29522D16002074F8 /* IdMenuView.swift */; };
+		CBD3D55129522D16002074F8 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD3D54D29522D16002074F8 /* TextFieldView.swift */; };
+		CBD3D55229522D16002074F8 /* SendDocView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD3D54E29522D16002074F8 /* SendDocView.swift */; };
+		CBD3D55329522D16002074F8 /* IdNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD3D54F29522D16002074F8 /* IdNumberView.swift */; };
+		CBD3D5872953906A002074F8 /* LoginEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD3D5862953906A002074F8 /* LoginEmailView.swift */; };
+		CBD3D589295391D1002074F8 /* LoginPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD3D588295391D1002074F8 /* LoginPasswordView.swift */; };
+		CBD3D58B295392C1002074F8 /* LoginButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD3D58A295392C1002074F8 /* LoginButtonsView.swift */; };
+		CBD3D58D2953AAD1002074F8 /* SendButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD3D58C2953AAD1002074F8 /* SendButtonsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,10 +73,18 @@
 		CB93BCD3294A211600732C72 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		CB93BCD5294A22F300732C72 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		CB93BCD9294A31DB00732C72 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
-		CB9EBDCB2950BE86009CA465 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
-		CB9EBDCD2950BEB6009CA465 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		CB9EBDCB2950BE86009CA465 /* MenuBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBackgroundView.swift; sourceTree = "<group>"; };
+		CB9EBDCD2950BEB6009CA465 /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
 		CB9EBDCF2950BF15009CA465 /* BoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
 		CB9EBDD32950C545009CA465 /* LoginHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHeaderView.swift; sourceTree = "<group>"; };
+		CBD3D54C29522D16002074F8 /* IdMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdMenuView.swift; sourceTree = "<group>"; };
+		CBD3D54D29522D16002074F8 /* TextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		CBD3D54E29522D16002074F8 /* SendDocView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendDocView.swift; sourceTree = "<group>"; };
+		CBD3D54F29522D16002074F8 /* IdNumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdNumberView.swift; sourceTree = "<group>"; };
+		CBD3D5862953906A002074F8 /* LoginEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailView.swift; sourceTree = "<group>"; };
+		CBD3D588295391D1002074F8 /* LoginPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordView.swift; sourceTree = "<group>"; };
+		CBD3D58A295392C1002074F8 /* LoginButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonsView.swift; sourceTree = "<group>"; };
+		CBD3D58C2953AAD1002074F8 /* SendButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendButtonsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				CB63350F294922F100CD86E5 /* AppSophosApp.swift */,
-				CB93BCD2294A20AA00732C72 /* Services */,
 				CB93BCCC294A13F900732C72 /* Models */,
+				CB93BCD2294A20AA00732C72 /* Services */,
+				CB9EBDD22950C182009CA465 /* ViewModel */,
 				CB93BCC7294A0EDB00732C72 /* Views */,
 				CB633513294922F300CD86E5 /* Assets.xcassets */,
 				CB633515294922F300CD86E5 /* Preview Content */,
@@ -159,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				CB9EBDD12950C01A009CA465 /* LoginView */,
+				CBD3D54B29522D16002074F8 /* SendDocView */,
 				CB9EBDCA2950BE36009CA465 /* MenuView */,
 				CB633511294922F100CD86E5 /* ContentView.swift */,
 			);
@@ -188,8 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				CB93BCCA294A120000732C72 /* MenuView.swift */,
-				CB9EBDCD2950BEB6009CA465 /* TopView.swift */,
-				CB9EBDCB2950BE86009CA465 /* BackgroundView.swift */,
+				CB9EBDCD2950BEB6009CA465 /* MenuButtonView.swift */,
+				CB9EBDCB2950BE86009CA465 /* MenuBackgroundView.swift */,
 				CB9EBDCF2950BF15009CA465 /* BoxView.swift */,
 			);
 			path = MenuView;
@@ -200,7 +218,9 @@
 			children = (
 				CB6335392949249C00CD86E5 /* LoginView.swift */,
 				CB9EBDD32950C545009CA465 /* LoginHeaderView.swift */,
-				CB9EBDD22950C182009CA465 /* ViewModel */,
+				CBD3D5862953906A002074F8 /* LoginEmailView.swift */,
+				CBD3D588295391D1002074F8 /* LoginPasswordView.swift */,
+				CBD3D58A295392C1002074F8 /* LoginButtonsView.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -211,6 +231,18 @@
 				CB93BCC8294A0F1500732C72 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CBD3D54B29522D16002074F8 /* SendDocView */ = {
+			isa = PBXGroup;
+			children = (
+				CBD3D54E29522D16002074F8 /* SendDocView.swift */,
+				CBD3D54C29522D16002074F8 /* IdMenuView.swift */,
+				CBD3D54F29522D16002074F8 /* IdNumberView.swift */,
+				CBD3D54D29522D16002074F8 /* TextFieldView.swift */,
+				CBD3D58C2953AAD1002074F8 /* SendButtonsView.swift */,
+			);
+			path = SendDocView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,19 +381,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBD3D58B295392C1002074F8 /* LoginButtonsView.swift in Sources */,
+				CBD3D55029522D16002074F8 /* IdMenuView.swift in Sources */,
+				CBD3D589295391D1002074F8 /* LoginPasswordView.swift in Sources */,
 				CB9EBDD02950BF15009CA465 /* BoxView.swift in Sources */,
-				CB9EBDCE2950BEB6009CA465 /* TopView.swift in Sources */,
+				CBD3D55129522D16002074F8 /* TextFieldView.swift in Sources */,
+				CB9EBDCE2950BEB6009CA465 /* MenuButtonView.swift in Sources */,
+				CBD3D58D2953AAD1002074F8 /* SendButtonsView.swift in Sources */,
 				CB93BCCB294A120000732C72 /* MenuView.swift in Sources */,
 				CB93BCC9294A0F1500732C72 /* LoginViewModel.swift in Sources */,
 				CB63353A2949249C00CD86E5 /* LoginView.swift in Sources */,
 				CB93BCD6294A22F300732C72 /* Credentials.swift in Sources */,
 				CB633512294922F100CD86E5 /* ContentView.swift in Sources */,
-				CB9EBDCC2950BE87009CA465 /* BackgroundView.swift in Sources */,
+				CB9EBDCC2950BE87009CA465 /* MenuBackgroundView.swift in Sources */,
 				CB93BCD4294A211600732C72 /* APIService.swift in Sources */,
 				CB633510294922F100CD86E5 /* AppSophosApp.swift in Sources */,
 				CB3B42A0294B86B300B2B6DB /* KeychainStorage.swift in Sources */,
+				CBD3D55229522D16002074F8 /* SendDocView.swift in Sources */,
 				CB9EBDD42950C545009CA465 /* LoginHeaderView.swift in Sources */,
 				CB89F150294AC8FE00190634 /* User.swift in Sources */,
+				CBD3D5872953906A002074F8 /* LoginEmailView.swift in Sources */,
+				CBD3D55329522D16002074F8 /* IdNumberView.swift in Sources */,
 				CB93BCDA294A31DB00732C72 /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

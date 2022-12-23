@@ -10,7 +10,7 @@ import LocalAuthentication
 
 class Authentication: ObservableObject {
     @Published var isValidated = false
-    @Published var isAuthorized = false
+    //@Published var isAuthorized = false
     
     enum BiometricType {
         case none
@@ -18,6 +18,7 @@ class Authentication: ObservableObject {
         case touch
     }
     
+    /// Error types
     enum AuthenticationError: Error, LocalizedError, Identifiable {
         case invalidCredentials
         case deniedAccess
@@ -70,8 +71,6 @@ class Authentication: ObservableObject {
     }
     
     func requestBiometricUnlock(completion: @escaping (Result<Credentials, AuthenticationError>) -> Void) {
-       // let credentials: Credentials? = Credentials(email: "anything", password: "password")
-        //let credentials: Credentials? = nil
         let credentials = KeychainStorage.getCredentials()
         guard let credentials = credentials else {
             completion(.failure(.credentialsNotSaved))

@@ -9,25 +9,29 @@ import SwiftUI
 
 struct TextFieldView: View {
     
+    @State var personalInfo: String
+    
     let fieldType: FieldType
     
     var body: some View {
         
-//        HStack {
-//            TextField(fieldType.title, text: <#Binding<String>#>)
-//                .font(.subheadline)
-//            .fontWeight(.semibold)
-//        }
-//        Divider()
-         //   .overlay(.black)
-        Text("hola")
+        VStack {
+            
+            TextField(fieldType.title,text: $personalInfo)
+                .font(.subheadline)
+        }
+        Divider()
+            .frame(height: 1)
+            .overlay(.black)
+            
     }
+    
 }
 
 enum FieldType: Int, CaseIterable {
-   case name = 0
-   case lastname
-   case email
+    case name = 0
+    case lastname
+    case email
 }
 
 extension FieldType {
@@ -46,6 +50,11 @@ extension FieldType {
 
 struct TextFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        ForEach(FieldType.allCases, id: \.rawValue) { TextFieldView(fieldType: $0)}
+        VStack{
+            
+            ForEach(FieldType.allCases, id: \.rawValue) { TextFieldView(personalInfo: "", fieldType: $0)}
+        }
+        
+        
     }
 }

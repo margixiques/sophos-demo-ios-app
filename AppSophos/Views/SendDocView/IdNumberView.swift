@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct IdNumberView: View {
-    @Binding var identification: String
+    
+    
+    @State var identification: String
+    
     var body: some View {
         HStack{
             
@@ -20,12 +23,13 @@ struct IdNumberView: View {
         }
         .font(.subheadline)
         Divider()
+            .frame(height: 1)
             .overlay(.black)
     }
 }
 
-//struct IdNumberView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        IdNumberView(identification: "")
-//    }
-//}
+struct IdNumberView_Previews: PreviewProvider {
+    static var previews: some View {
+        IdNumberView(identification: "")
+    }
+}
