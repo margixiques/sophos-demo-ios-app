@@ -11,11 +11,12 @@
 		CB3A84B12955FA76004BD11F /* OfficesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3A84B02955FA76004BD11F /* OfficesView.swift */; };
 		CB3B429E294B822800B2B6DB /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = CB3B429D294B822800B2B6DB /* SwiftKeychainWrapper */; };
 		CB3B42A0294B86B300B2B6DB /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B429F294B86B300B2B6DB /* KeychainStorage.swift */; };
-		CB5836BF29679CB500535499 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5836BE29679CB500535499 /* Document.swift */; };
+		CB55BC012969C22F009C8C9E /* WatchDocViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB55BC002969C22F009C8C9E /* WatchDocViewModel.swift */; };
+		CB55BC052969DCCD009C8C9E /* ResultDocumentId.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB55BC042969DCCD009C8C9E /* ResultDocumentId.swift */; };
+		CB55BC072969DD09009C8C9E /* ResultDocumentEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB55BC062969DD09009C8C9E /* ResultDocumentEmail.swift */; };
+		CB5836BF29679CB500535499 /* PostDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5836BE29679CB500535499 /* PostDocument.swift */; };
 		CB5836C32967C56D00535499 /* Office.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5836C22967C56D00535499 /* Office.swift */; };
 		CB5836C52967CC3200535499 /* MapDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5836C42967CC3200535499 /* MapDirectory.swift */; };
-		CB5836C72968BE3D00535499 /* WatchDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5836C62968BE3D00535499 /* WatchDocument.swift */; };
-		CB5836C92968C49800535499 /* PersonalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5836C82968C49800535499 /* PersonalInfo.swift */; };
 		CB633510294922F100CD86E5 /* AppSophosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63350F294922F100CD86E5 /* AppSophosApp.swift */; };
 		CB633512294922F100CD86E5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB633511294922F100CD86E5 /* ContentView.swift */; };
 		CB633514294922F300CD86E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB633513294922F300CD86E5 /* Assets.xcassets */; };
@@ -70,11 +71,12 @@
 		CB3A84AD2955F759004BD11F /* WatchDocView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDocView.swift; sourceTree = "<group>"; };
 		CB3A84B02955FA76004BD11F /* OfficesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficesView.swift; sourceTree = "<group>"; };
 		CB3B429F294B86B300B2B6DB /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
-		CB5836BE29679CB500535499 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		CB55BC002969C22F009C8C9E /* WatchDocViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDocViewModel.swift; sourceTree = "<group>"; };
+		CB55BC042969DCCD009C8C9E /* ResultDocumentId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDocumentId.swift; sourceTree = "<group>"; };
+		CB55BC062969DD09009C8C9E /* ResultDocumentEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDocumentEmail.swift; sourceTree = "<group>"; };
+		CB5836BE29679CB500535499 /* PostDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDocument.swift; sourceTree = "<group>"; };
 		CB5836C22967C56D00535499 /* Office.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Office.swift; sourceTree = "<group>"; };
 		CB5836C42967CC3200535499 /* MapDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDirectory.swift; sourceTree = "<group>"; };
-		CB5836C62968BE3D00535499 /* WatchDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDocument.swift; sourceTree = "<group>"; };
-		CB5836C82968C49800535499 /* PersonalInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfo.swift; sourceTree = "<group>"; };
 		CB63350C294922F100CD86E5 /* AppSophos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppSophos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB63350F294922F100CD86E5 /* AppSophosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSophosApp.swift; sourceTree = "<group>"; };
 		CB633511294922F100CD86E5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -230,11 +232,11 @@
 			children = (
 				CB93BCD5294A22F300732C72 /* Credentials.swift */,
 				CB89F14F294AC8FE00190634 /* User.swift */,
-				CB5836BE29679CB500535499 /* Document.swift */,
+				CB5836BE29679CB500535499 /* PostDocument.swift */,
+				CB55BC062969DD09009C8C9E /* ResultDocumentEmail.swift */,
 				CB5836C22967C56D00535499 /* Office.swift */,
 				CB5836C42967CC3200535499 /* MapDirectory.swift */,
-				CB5836C62968BE3D00535499 /* WatchDocument.swift */,
-				CB5836C82968C49800535499 /* PersonalInfo.swift */,
+				CB55BC042969DCCD009C8C9E /* ResultDocumentId.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,6 +280,7 @@
 			children = (
 				CB93BCC8294A0F1500732C72 /* LoginViewModel.swift */,
 				CBD3D592295538F1002074F8 /* SendDocViewModel.swift */,
+				CB55BC002969C22F009C8C9E /* WatchDocViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -434,7 +437,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBD3D58B295392C1002074F8 /* LoginButtonsView.swift in Sources */,
-				CB5836C92968C49800535499 /* PersonalInfo.swift in Sources */,
 				CBD3D55029522D16002074F8 /* SendDocIdTypeView.swift in Sources */,
 				CBD3D589295391D1002074F8 /* LoginPasswordView.swift in Sources */,
 				CB3A84AE2955F75A004BD11F /* WatchDocView.swift in Sources */,
@@ -442,9 +444,8 @@
 				CB5836C32967C56D00535499 /* Office.swift in Sources */,
 				CBD3D5A129555B7F002074F8 /* BiometricButtonLabel.swift in Sources */,
 				CB9EBDCE2950BEB6009CA465 /* MenuButtonView.swift in Sources */,
-				CB5836BF29679CB500535499 /* Document.swift in Sources */,
+				CB5836BF29679CB500535499 /* PostDocument.swift in Sources */,
 				CB3A84B12955FA76004BD11F /* OfficesView.swift in Sources */,
-				CB5836C72968BE3D00535499 /* WatchDocument.swift in Sources */,
 				CBD3D58D2953AAD1002074F8 /* SendButtonsView.swift in Sources */,
 				CB93BCCB294A120000732C72 /* MenuView.swift in Sources */,
 				CBD3D599295548B7002074F8 /* SendDocIdView.swift in Sources */,
@@ -453,14 +454,17 @@
 				CB63353A2949249C00CD86E5 /* LoginView.swift in Sources */,
 				CB93BCD6294A22F300732C72 /* Credentials.swift in Sources */,
 				CB633512294922F100CD86E5 /* ContentView.swift in Sources */,
+				CB55BC072969DD09009C8C9E /* ResultDocumentEmail.swift in Sources */,
 				CB9EBDCC2950BE87009CA465 /* MenuBackgroundView.swift in Sources */,
 				CBD3D59F29554F9D002074F8 /* SendDocPickerPhotoView.swift in Sources */,
 				CBD3D59D29554E55002074F8 /* SendDocCityFieldView.swift in Sources */,
 				CB93BCD4294A211600732C72 /* APIService.swift in Sources */,
+				CB55BC052969DCCD009C8C9E /* ResultDocumentId.swift in Sources */,
 				CB633510294922F100CD86E5 /* AppSophosApp.swift in Sources */,
 				CB3B42A0294B86B300B2B6DB /* KeychainStorage.swift in Sources */,
 				CBD3D55229522D16002074F8 /* SendDocView.swift in Sources */,
 				CB9EBDD42950C545009CA465 /* LoginHeaderView.swift in Sources */,
+				CB55BC012969C22F009C8C9E /* WatchDocViewModel.swift in Sources */,
 				CB89F150294AC8FE00190634 /* User.swift in Sources */,
 				CBD3D5872953906A002074F8 /* LoginEmailView.swift in Sources */,
 				CBD3D593295538F1002074F8 /* SendDocViewModel.swift in Sources */,

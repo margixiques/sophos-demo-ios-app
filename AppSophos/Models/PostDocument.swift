@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Document
-struct Document: Codable {
+struct PostDocument: Codable {
     let idType: String
     let identification: String
     let name: String

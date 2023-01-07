@@ -40,7 +40,9 @@ struct PersonalInfo {
 }
 
 @MainActor class SendDocViewModel: ObservableObject {
+    
     @Published var personalInfo = PersonalInfo()
+    @Published var showProgressView = false
     
     private func setImage() async {
         personalInfo.uiImage = UIImage(data: personalInfo.imageData ?? Data())
@@ -51,7 +53,7 @@ struct PersonalInfo {
         // Encode image to base64
         personalInfo.attach = personalInfo.imageData?.base64EncodedString() ?? ""
         
-        let document = Document(
+        let document = PostDocument(
             idType: personalInfo.idType,
             identification: personalInfo.identification,
             name: personalInfo.name,
@@ -88,8 +90,10 @@ struct PersonalInfo {
     }
     
     func actionButton() async {
+        showProgressView = true
         await setImage()
         await postDocument()
+        showProgressView = false
     }
 }
 

@@ -9,7 +9,7 @@ import SwiftUI
 import PhotosUI
 
 struct SendDocPickerPhotoView: View {
-  
+    
     @State private var selectedItem: PhotosPickerItem?
     @Binding var selectedPhotoData: Data?
     
@@ -24,41 +24,31 @@ struct SendDocPickerPhotoView: View {
                     .padding(.bottom, 30)
                 
                 
-                        PhotosPicker(selection: $selectedItem,
-                                     matching: .images)
-                         {
-                             if let selectedPhotoData,
-                                let image = UIImage(data: selectedPhotoData) {
-                                 
-                                 Image(uiImage: image)
-                                     .resizable()
-                                     .scaledToFit()
-                                     .clipped()
-                                     .frame(height: 300)
-                             } else {
-                                 Image(systemName: "camera")
-                                      .resizable()
-                                      .tint(.black)
-                                      .frame(width: 60, height: 50)
-                             }
-                        }
-                        .onChange(of: selectedItem) { newItem in
-                            Task {
-                                if let data = try? await newItem?.loadTransferable(type: Data.self) {
-                                    selectedPhotoData = data
-                                }
-                            }
-                        }
-                    
-                    Button {
+                PhotosPicker(selection: $selectedItem,
+                             matching: .images)
+                {
+                    if let selectedPhotoData,
+                       let image = UIImage(data: selectedPhotoData) {
                         
-                    } label: {
-                        Text("Tomar Foto")
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFit()
+                            .clipped()
+                            .frame(height: 300)
+                    } else {
+                        Image(systemName: "camera")
+                            .resizable()
+                            .tint(.black)
+                            .frame(width: 60, height: 50)
                     }
-
-            
-
-                
+                }
+                .onChange(of: selectedItem) { newItem in
+                    Task {
+                        if let data = try? await newItem?.loadTransferable(type: Data.self) {
+                            selectedPhotoData = data
+                        }
+                    }
+                }
             }
         }
     }
@@ -67,6 +57,6 @@ struct SendDocPickerPhotoView: View {
 struct SendDocButtonView_Previews: PreviewProvider {
     static var previews: some View {
         SendDocPickerPhotoView(selectedPhotoData:.constant(nil))
-
+        
     }
 }

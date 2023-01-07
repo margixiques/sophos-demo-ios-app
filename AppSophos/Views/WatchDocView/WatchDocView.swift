@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct WatchDocView: View {
+    
+    @ObservedObject var vm = WatchDocViewModel()
+    
     var body: some View {
         NavigationStack {
             VStack (spacing: 20){
@@ -16,9 +19,26 @@ struct WatchDocView: View {
                     .font(.title3)
                     .fontWeight(.heavy)
                 Spacer()
-
+                
+                List(vm.items, id: \.idRegister) { item in
+                    VStack(alignment: .leading) {
+                        Text(item.name)
+                            .font(.headline)
+                        Text(item.attachmentType)
+                    }
+                }
+                
             }
         } .navigationBarBackButtonHidden(true)
+            .onAppear {
+                Task {
+                    do {
+                        try await vm.loadData()
+                    } catch {
+                        
+                    }
+                }
+            }
     }
 }
 

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SendDocView: View {
     
-    @ObservedObject var vm = SendDocViewModel()
+    @StateObject var vm = SendDocViewModel()
     
     var body: some View {
         
@@ -34,11 +34,17 @@ struct SendDocView: View {
                                          title: "Apellidos")
                         SendDocFieldView(text: $vm.personalInfo.email,
                                          title: "Email")
+                        .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                        .disableAutocorrection(true)
                         SendDocCityFieldView(city: $vm.personalInfo.city)
                         SendDocFieldView(text: $vm.personalInfo.attachType,
                                          title: "Tipo de adjunto")
                     }
                     Spacer()
+                    if vm.showProgressView {
+                        ProgressView()
+                    }
+                    
                     Button {
                         Task{
                             await vm.actionButton()
@@ -47,6 +53,7 @@ struct SendDocView: View {
                     } label: {
                         Text("Enviar")
                     }
+                    .disabled(vm.showProgressView)
                     .fontWeight(.heavy)
                     .font(.subheadline)
                     .foregroundColor(.white)

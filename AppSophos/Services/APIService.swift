@@ -19,7 +19,7 @@ class APIService {
 enum Endpoint {
     case user(email: String, password: String)
     case sendDoc
-    case findDoc(id: String, email: String)
+    case getDocByUser(email: String)
     case findOffices(city: String)
 }
 
@@ -31,8 +31,8 @@ extension Endpoint {
             return .makeForEndpoint("RS_Usuarios?idUsuario=\(email)&clave=\(password)")
         case .sendDoc:
             return .makeForEndpoint("RS_Documentos")
-        case .findDoc(id: let id, email: let email):
-            return .makeForEndpoint("RS_Documentos?idRegistro=\(id)&correo=\(email)")
+        case .getDocByUser(email: let email):
+            return .makeForEndpoint("RS_Documentos?correo=\(email)")
         case .findOffices(city: let city):
             return .makeForEndpoint("RS_Oficinas?ciudad=\(city)")
         }
