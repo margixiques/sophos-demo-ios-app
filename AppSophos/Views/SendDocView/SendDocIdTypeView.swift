@@ -9,17 +9,28 @@ import SwiftUI
 
 struct SendDocIdTypeView: View {
     
-    @ObservedObject var vm = SendDocIdTypeViewModel()
+    @Binding var docType: String
     
     var body: some View {
         HStack {
-            Text(vm.docType)
+            
+            if docType.isEmpty {
+                Text("Tipo de documento")
+            } else {
+                Text(docType)
+            }
+            
             Spacer()
             Menu {
-                Button("Cédula de Ciudadanía", action: vm.cc)
-                Button("Tarjeta de Identidad", action: vm.ti)
-                Button("Pasaporte", action: vm.pa)
-                Button("Cédula de Extranjería", action: vm.ce)
+                
+                ForEach(DocType.allCases, id: \.rawValue) { type in
+                    Button {
+                        docType = type.rawValue
+                    } label: {
+                        Text(type.rawValue)
+                    }
+                }
+                
             } label: {
                 Image(systemName: "arrowtriangle.down.fill")
                     .tint(.black)
@@ -29,8 +40,8 @@ struct SendDocIdTypeView: View {
 }
 
 
-struct IdMenuView_Previews: PreviewProvider {
-    static var previews: some View {
-        SendDocIdTypeView()
-    }
-}
+//struct IdMenuView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SendDocIdTypeView(docType: "Tipo de documento")
+//    }
+//}

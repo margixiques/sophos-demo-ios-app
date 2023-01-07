@@ -9,46 +9,28 @@ import SwiftUI
 
 struct SendButtonsView: View {
     
+    @ObservedObject var vm = SendDocViewModel()
+    
     var body: some View {
         
-        VStack (spacing: 25){
-            
-            HStack {
-                Button {
-                    
-                } label: {
-                    HStack{
-                        Image(systemName: "icloud.and.arrow.up")
-                        Text("Documento")
-                    }
-                }
-                
-                .fontWeight(.heavy)
-                .font(.subheadline)
-                .foregroundColor(.white)
-                .frame(width: 160, height: 40)
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(Color("colorPink"))
-                )
-                
-                Spacer()
+        
+        Button {
+            Task{
+                await vm.actionButton()
             }
-            
-            Button {
-                
-            } label: {
-                Text("Enviar")
-            }
-            .fontWeight(.heavy)
-            .font(.subheadline)
-            .foregroundColor(.white)
-            .frame(maxWidth: .infinity, maxHeight: 40)
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color("colorPink"))
-            )
+           
+        } label: {
+            Text("Enviar")
         }
+        .fontWeight(.heavy)
+        .font(.subheadline)
+        .foregroundColor(.white)
+        .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 40)
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .fill(Color("colorPink"))
+        )
+        
     }
 }
 

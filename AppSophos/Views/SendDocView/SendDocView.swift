@@ -9,40 +9,57 @@ import SwiftUI
 
 struct SendDocView: View {
     
-    @ObservedObject var vm = DocFormViewModel()
-    
+    @ObservedObject var vm = SendDocViewModel()
     
     var body: some View {
         
         NavigationStack {
-            VStack (spacing: 20){
-                Group {
-                    SendDocHeaderView()
-                    Spacer()
-                    SendDocButtonView()
-                    Spacer()
-                    SendDocIdTypeView()
-                }
-                
-                Group {
-                    SendDocIdView(identification: $vm.personalInfo.identification)
+            ScrollView {
+                VStack (spacing: 20){
                     
-                    SendDocFieldView(text: $vm.personalInfo.names,
-                                     title: "Nombre")
-                    SendDocFieldView(text: $vm.personalInfo.lastname,
-                                     title: "Apellidos")
-                    SendDocFieldView(text: $vm.personalInfo.email,
-                                     title: "Email")
-                    SendDocCityFieldView()
-                    SendDocFieldView(text: $vm.personalInfo.attachType,
-                                     title: "Tipo de adjunto")
-                }
+                    Group {
+                        SendDocHeaderView()
+                        Spacer()
+                        SendDocPickerPhotoView(selectedPhotoData: $vm.personalInfo.imageData)
+                        Spacer()
+                        SendDocIdTypeView(docType: $vm.personalInfo.idType)
+                    }
+                    
+                    Group {
+                        SendDocIdView(identification: $vm.personalInfo.identification)
+                        
+                        SendDocFieldView(text: $vm.personalInfo.name,
+                                         title: "Nombre")
+                        SendDocFieldView(text: $vm.personalInfo.lastname,
+                                         title: "Apellidos")
+                        SendDocFieldView(text: $vm.personalInfo.email,
+                                         title: "Email")
+                        SendDocCityFieldView(city: $vm.personalInfo.city)
+                        SendDocFieldView(text: $vm.personalInfo.attachType,
+                                         title: "Tipo de adjunto")
+                    }
+                    Spacer()
+                    Button {
+                        Task{
+                            await vm.actionButton()
+                        }
+                       
+                    } label: {
+                        Text("Enviar")
+                    }
+                    .fontWeight(.heavy)
+                    .font(.subheadline)
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 40)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color("colorPink"))
+                    ).padding(.top, 30)
+                    
                 
-                SendButtonsView().padding(.top, 30)
-                
-                Spacer()
-                
-            }.padding(.horizontal, 20)
+                    
+                }.padding(.horizontal, 20)
+            }
         }.navigationBarBackButtonHidden(true)
     }
 }

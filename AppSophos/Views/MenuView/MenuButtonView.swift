@@ -45,6 +45,7 @@ struct MenuButtonView: View {
                 //("Cerrar sesión", action: logout)
             } label: {
                 Image(systemName: "list.dash")
+                    
             }
             .overlay(
                 NavigationLink(destination: AnyView(self.navigateTo), isActive: $isNavigationActive) {

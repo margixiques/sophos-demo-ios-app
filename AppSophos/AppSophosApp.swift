@@ -21,7 +21,8 @@ struct AppSophosApp: App {
                 LoginView()
                     .environmentObject(authentication)
             }
-            
+//            SendDocPickerPhotoView()
+//                .environmentObject(SendDocPickerPhotoViewModel())
         }
     }
 }

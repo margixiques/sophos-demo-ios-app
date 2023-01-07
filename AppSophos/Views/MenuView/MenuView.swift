@@ -33,7 +33,7 @@ struct MenuView: View {
                   }
                }.padding(.bottom, 40)
             }.onAppear {
-               userName = UserDefaults.standard.string(forKey: "userName") ?? "Algo"
+               userName = UserDefaults.standard.string(forKey: "userName") ?? "Usuario"
             }
          }
       }.navigationBarBackButtonHidden(true)
