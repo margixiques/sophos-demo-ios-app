@@ -22,10 +22,14 @@ struct WatchDocView: View {
                 
                 List(vm.items, id: \.idRegister) { item in
                     VStack(alignment: .leading) {
-                        Text(item.name)
-                            .font(.headline)
-                        Text(item.attachmentType)
+                        
+                        Text(item.date + " - " + item.attachmentType)
+                            .padding(.bottom, 10)
+                        Text(item.name + " " + item.lastname)
+            
                     }
+                    .padding()
+                    .font(.subheadline)
                 }
                 
             }

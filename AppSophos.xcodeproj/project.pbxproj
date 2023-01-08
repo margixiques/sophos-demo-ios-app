@@ -14,6 +14,7 @@
 		CB55BC012969C22F009C8C9E /* WatchDocViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB55BC002969C22F009C8C9E /* WatchDocViewModel.swift */; };
 		CB55BC052969DCCD009C8C9E /* ResultDocumentId.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB55BC042969DCCD009C8C9E /* ResultDocumentId.swift */; };
 		CB55BC072969DD09009C8C9E /* ResultDocumentEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB55BC062969DD09009C8C9E /* ResultDocumentEmail.swift */; };
+		CB55BC0A296A57C7009C8C9E /* OfficesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB55BC09296A57C7009C8C9E /* OfficesViewModel.swift */; };
 		CB5836BF29679CB500535499 /* PostDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5836BE29679CB500535499 /* PostDocument.swift */; };
 		CB5836C32967C56D00535499 /* Office.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5836C22967C56D00535499 /* Office.swift */; };
 		CB5836C52967CC3200535499 /* MapDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5836C42967CC3200535499 /* MapDirectory.swift */; };
@@ -74,6 +75,8 @@
 		CB55BC002969C22F009C8C9E /* WatchDocViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDocViewModel.swift; sourceTree = "<group>"; };
 		CB55BC042969DCCD009C8C9E /* ResultDocumentId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDocumentId.swift; sourceTree = "<group>"; };
 		CB55BC062969DD09009C8C9E /* ResultDocumentEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDocumentEmail.swift; sourceTree = "<group>"; };
+		CB55BC08296A56A5009C8C9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CB55BC09296A57C7009C8C9E /* OfficesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficesViewModel.swift; sourceTree = "<group>"; };
 		CB5836BE29679CB500535499 /* PostDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDocument.swift; sourceTree = "<group>"; };
 		CB5836C22967C56D00535499 /* Office.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Office.swift; sourceTree = "<group>"; };
 		CB5836C42967CC3200535499 /* MapDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDirectory.swift; sourceTree = "<group>"; };
@@ -178,6 +181,7 @@
 		CB63350E294922F100CD86E5 /* AppSophos */ = {
 			isa = PBXGroup;
 			children = (
+				CB55BC08296A56A5009C8C9E /* Info.plist */,
 				CB63350F294922F100CD86E5 /* AppSophosApp.swift */,
 				CB93BCCC294A13F900732C72 /* Models */,
 				CB93BCD2294A20AA00732C72 /* Services */,
@@ -234,9 +238,9 @@
 				CB89F14F294AC8FE00190634 /* User.swift */,
 				CB5836BE29679CB500535499 /* PostDocument.swift */,
 				CB55BC062969DD09009C8C9E /* ResultDocumentEmail.swift */,
+				CB55BC042969DCCD009C8C9E /* ResultDocumentId.swift */,
 				CB5836C22967C56D00535499 /* Office.swift */,
 				CB5836C42967CC3200535499 /* MapDirectory.swift */,
-				CB55BC042969DCCD009C8C9E /* ResultDocumentId.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -281,6 +285,7 @@
 				CB93BCC8294A0F1500732C72 /* LoginViewModel.swift */,
 				CBD3D592295538F1002074F8 /* SendDocViewModel.swift */,
 				CB55BC002969C22F009C8C9E /* WatchDocViewModel.swift */,
+				CB55BC09296A57C7009C8C9E /* OfficesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -468,6 +473,7 @@
 				CB89F150294AC8FE00190634 /* User.swift in Sources */,
 				CBD3D5872953906A002074F8 /* LoginEmailView.swift in Sources */,
 				CBD3D593295538F1002074F8 /* SendDocViewModel.swift in Sources */,
+				CB55BC0A296A57C7009C8C9E /* OfficesViewModel.swift in Sources */,
 				CBD3D59129552C65002074F8 /* SendDocHeaderView.swift in Sources */,
 				CBD3D59B29554E33002074F8 /* SendDocFieldView.swift in Sources */,
 				CB93BCDA294A31DB00732C72 /* Authentication.swift in Sources */,
@@ -632,8 +638,10 @@
 				DEVELOPMENT_TEAM = 523W826V48;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AppSophos/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow Camera Access";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Allow Face ID to access stored credentials";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show you the closest offices";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -663,8 +671,10 @@
 				DEVELOPMENT_TEAM = 523W826V48;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AppSophos/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow Camera Access";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Allow Face ID to access stored credentials";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show you the closest offices";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
