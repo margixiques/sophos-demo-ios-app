@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB33D8F8296BBD8C00E778FC /* Offices.json in Resources */ = {isa = PBXBuildFile; fileRef = CB33D8F7296BBD8C00E778FC /* Offices.json */; };
 		CB3A84AE2955F75A004BD11F /* WatchDocView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3A84AD2955F759004BD11F /* WatchDocView.swift */; };
 		CB3A84B12955FA76004BD11F /* OfficesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3A84B02955FA76004BD11F /* OfficesView.swift */; };
 		CB3B429E294B822800B2B6DB /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = CB3B429D294B822800B2B6DB /* SwiftKeychainWrapper */; };
@@ -15,6 +16,7 @@
 		CB55BC052969DCCD009C8C9E /* ResultDocumentId.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB55BC042969DCCD009C8C9E /* ResultDocumentId.swift */; };
 		CB55BC072969DD09009C8C9E /* ResultDocumentEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB55BC062969DD09009C8C9E /* ResultDocumentEmail.swift */; };
 		CB55BC0A296A57C7009C8C9E /* OfficesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB55BC09296A57C7009C8C9E /* OfficesViewModel.swift */; };
+		CB55BC0C296A6EBD009C8C9E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB55BC0B296A6EBD009C8C9E /* LocationManager.swift */; };
 		CB5836BF29679CB500535499 /* PostDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5836BE29679CB500535499 /* PostDocument.swift */; };
 		CB5836C32967C56D00535499 /* Office.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5836C22967C56D00535499 /* Office.swift */; };
 		CB5836C52967CC3200535499 /* MapDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5836C42967CC3200535499 /* MapDirectory.swift */; };
@@ -69,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB33D8F7296BBD8C00E778FC /* Offices.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Offices.json; sourceTree = "<group>"; };
 		CB3A84AD2955F759004BD11F /* WatchDocView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDocView.swift; sourceTree = "<group>"; };
 		CB3A84B02955FA76004BD11F /* OfficesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficesView.swift; sourceTree = "<group>"; };
 		CB3B429F294B86B300B2B6DB /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
@@ -77,6 +80,7 @@
 		CB55BC062969DD09009C8C9E /* ResultDocumentEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDocumentEmail.swift; sourceTree = "<group>"; };
 		CB55BC08296A56A5009C8C9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB55BC09296A57C7009C8C9E /* OfficesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficesViewModel.swift; sourceTree = "<group>"; };
+		CB55BC0B296A6EBD009C8C9E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		CB5836BE29679CB500535499 /* PostDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDocument.swift; sourceTree = "<group>"; };
 		CB5836C22967C56D00535499 /* Office.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Office.swift; sourceTree = "<group>"; };
 		CB5836C42967CC3200535499 /* MapDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDirectory.swift; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 				CB5836BE29679CB500535499 /* PostDocument.swift */,
 				CB55BC062969DD09009C8C9E /* ResultDocumentEmail.swift */,
 				CB55BC042969DCCD009C8C9E /* ResultDocumentId.swift */,
+				CB33D8F7296BBD8C00E778FC /* Offices.json */,
 				CB5836C22967C56D00535499 /* Office.swift */,
 				CB5836C42967CC3200535499 /* MapDirectory.swift */,
 			);
@@ -251,6 +256,7 @@
 				CB93BCD9294A31DB00732C72 /* Authentication.swift */,
 				CB93BCD3294A211600732C72 /* APIService.swift */,
 				CB3B429F294B86B300B2B6DB /* KeychainStorage.swift */,
+				CB55BC0B296A6EBD009C8C9E /* LocationManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -416,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB633517294922F300CD86E5 /* Preview Assets.xcassets in Resources */,
+				CB33D8F8296BBD8C00E778FC /* Offices.json in Resources */,
 				CB633514294922F300CD86E5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,6 +484,7 @@
 				CBD3D59129552C65002074F8 /* SendDocHeaderView.swift in Sources */,
 				CBD3D59B29554E33002074F8 /* SendDocFieldView.swift in Sources */,
 				CB93BCDA294A31DB00732C72 /* Authentication.swift in Sources */,
+				CB55BC0C296A6EBD009C8C9E /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
