@@ -18,12 +18,13 @@ struct WatchDocView: View {
                 Text("Documentos")
                     .font(.title3)
                     .fontWeight(.heavy)
+
                 Spacer()
                 
                 List(vm.items, id: \.idRegister) { item in
                     VStack(alignment: .leading) {
                         
-                        Text(item.date + " - " + item.attachmentType)
+                        Text(vm.getDate(from: item.date) + " - " + item.attachmentType)
                             .padding(.bottom, 10)
                         Text(item.name + " " + item.lastname)
             

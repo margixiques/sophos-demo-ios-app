@@ -43,6 +43,7 @@ struct PersonalInfo {
     
     @Published var personalInfo = PersonalInfo()
     @Published var showProgressView = false
+    @Published var put = Put(put: false)
     
     private func setImage() async {
         personalInfo.uiImage = UIImage(data: personalInfo.imageData ?? Data())
@@ -80,13 +81,15 @@ struct PersonalInfo {
         // send the request
         Task{
             do {
-                let (data, _) = try await URLSession.shared.upload(for: urlRequest, from: encoded)
-                
+                let (data, response) = try await URLSession.shared.upload(for: urlRequest, from: encoded)
+
                 // handle the result
             } catch {
                 print("Checkout failed.")
             }
         }
+        
+    
     }
     
     func actionButton() async {

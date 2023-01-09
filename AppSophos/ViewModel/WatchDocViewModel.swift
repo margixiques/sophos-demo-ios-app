@@ -12,7 +12,6 @@ import SwiftUI
     
     @Published var items = [ItemEmail]()
     
-    
     func loadData() async throws {
         
         guard let email = KeychainStorage.getCredentials()?.email else { return }
@@ -28,6 +27,17 @@ import SwiftUI
         } catch {
             print("Invalid data")
         }
+    }
+    
+    func getDate(from itemDate: String) -> String {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z''"
+        let date = dateFormatter.date(from: itemDate) ?? Date.now
+        
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        
+        return dateFormatter.string(from: date)
     }
 }
 

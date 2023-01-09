@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB33D8F8296BBD8C00E778FC /* Offices.json in Resources */ = {isa = PBXBuildFile; fileRef = CB33D8F7296BBD8C00E778FC /* Offices.json */; };
+		CB33D8FA296BDC5000E778FC /* Put.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33D8F9296BDC5000E778FC /* Put.swift */; };
 		CB3A84AE2955F75A004BD11F /* WatchDocView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3A84AD2955F759004BD11F /* WatchDocView.swift */; };
 		CB3A84B12955FA76004BD11F /* OfficesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3A84B02955FA76004BD11F /* OfficesView.swift */; };
 		CB3B429E294B822800B2B6DB /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = CB3B429D294B822800B2B6DB /* SwiftKeychainWrapper */; };
@@ -72,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		CB33D8F7296BBD8C00E778FC /* Offices.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Offices.json; sourceTree = "<group>"; };
+		CB33D8F9296BDC5000E778FC /* Put.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Put.swift; sourceTree = "<group>"; };
 		CB3A84AD2955F759004BD11F /* WatchDocView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDocView.swift; sourceTree = "<group>"; };
 		CB3A84B02955FA76004BD11F /* OfficesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficesView.swift; sourceTree = "<group>"; };
 		CB3B429F294B86B300B2B6DB /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				CB33D8F7296BBD8C00E778FC /* Offices.json */,
 				CB5836C22967C56D00535499 /* Office.swift */,
 				CB5836C42967CC3200535499 /* MapDirectory.swift */,
+				CB33D8F9296BDC5000E778FC /* Put.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				CBD3D59F29554F9D002074F8 /* SendDocPickerPhotoView.swift in Sources */,
 				CBD3D59D29554E55002074F8 /* SendDocCityFieldView.swift in Sources */,
 				CB93BCD4294A211600732C72 /* APIService.swift in Sources */,
+				CB33D8FA296BDC5000E778FC /* Put.swift in Sources */,
 				CB55BC052969DCCD009C8C9E /* ResultDocumentId.swift in Sources */,
 				CB633510294922F100CD86E5 /* AppSophosApp.swift in Sources */,
 				CB3B42A0294B86B300B2B6DB /* KeychainStorage.swift in Sources */,
