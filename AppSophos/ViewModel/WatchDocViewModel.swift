@@ -33,8 +33,8 @@ import SwiftUI
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z''"
-        let date = dateFormatter.date(from: itemDate) ?? Date.now
         
+        let date = dateFormatter.date(from: itemDate) ?? Date.now
         dateFormatter.dateFormat = "dd/MM/yyyy"
         
         return dateFormatter.string(from: date)

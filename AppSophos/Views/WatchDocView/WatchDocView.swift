@@ -22,15 +22,21 @@ struct WatchDocView: View {
                 Spacer()
                 
                 List(vm.items, id: \.idRegister) { item in
-                    VStack(alignment: .leading) {
-                        
-                        Text(vm.getDate(from: item.date) + " - " + item.attachmentType)
-                            .padding(.bottom, 10)
-                        Text(item.name + " " + item.lastname)
-            
+                    NavigationLink {
+                        WatchDocImageView(vm: WatchDocImageViewModel(idRegister: item.idRegister))
+                    } label: {
+                        VStack(alignment: .leading) {
+                            
+                            Text(vm.getDate(from: item.date) + " - " + item.attachmentType)
+                                .padding(.bottom, 10)
+                            Text(item.name + " " + item.lastname)
+                
+                        }
+                        .padding()
+                        .font(.subheadline)
                     }
-                    .padding()
-                    .font(.subheadline)
+
+                   
                 }
                 
             }

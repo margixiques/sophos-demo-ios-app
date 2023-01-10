@@ -190,8 +190,8 @@
             filePath = "AppSophos/Services/APIService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "makeForEndpoint(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -289,6 +289,132 @@
             startingLineNumber = "66"
             endingLineNumber = "66"
             landmarkName = "readFile()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C28D73E1-DCF5-4F10-AF89-1EA9415E6C92"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppSophos/ViewModel/WatchDocImageViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "fetchDocument()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "76B6E44F-8711-46A8-91EC-B44E904069CC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppSophos/ViewModel/WatchDocImageViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "fetchDocument()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "76B6E44F-8711-46A8-91EC-B44E904069CC - e63a6dc942db10da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for AppSophos.WatchDocImageViewModel.fetchDocument() async throws -&gt; ()"
+                  moduleName = "AppSophos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/margi/Sophos/Reto%20Final/AppSophos/AppSophos/ViewModel/WatchDocImageViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "76B6E44F-8711-46A8-91EC-B44E904069CC - c533677e1ca29bfa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for AppSophos.WatchDocImageViewModel.fetchDocument() async throws -&gt; ()"
+                  moduleName = "AppSophos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/margi/Sophos/Reto%20Final/AppSophos/AppSophos/ViewModel/WatchDocImageViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "76B6E44F-8711-46A8-91EC-B44E904069CC - 96047afdd2ddc4d8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for AppSophos.WatchDocImageViewModel.fetchDocument() async throws -&gt; ()"
+                  moduleName = "AppSophos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/margi/Sophos/Reto%20Final/AppSophos/AppSophos/ViewModel/WatchDocImageViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "76B6E44F-8711-46A8-91EC-B44E904069CC - 5e798e782ae162d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for AppSophos.WatchDocImageViewModel.fetchDocument() async throws -&gt; ()"
+                  moduleName = "AppSophos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/margi/Sophos/Reto%20Final/AppSophos/AppSophos/ViewModel/WatchDocImageViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "818DAE28-CC4F-411B-BBC2-8CCDEDDA51BE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppSophos/ViewModel/WatchDocImageViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "fetchDocument()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B06FE5DC-DB9D-4402-8E13-D746E3073C99"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppSophos/ViewModel/WatchDocImageViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "getImage(from:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

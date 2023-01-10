@@ -20,6 +20,7 @@ enum Endpoint {
     case user(email: String, password: String)
     case sendDoc
     case getDocByUser(email: String)
+    case getDocByIdRegister(idRegister: String)
     case findOffices
 }
 
@@ -35,6 +36,8 @@ extension Endpoint {
             return .makeForEndpoint("RS_Documentos?correo=\(email)")
         case .findOffices:
             return .makeForEndpoint("RS_Oficinas")
+        case .getDocByIdRegister(idRegister: let idRegister):
+            return .makeForEndpoint("RS_Documentos?idRegistro=\(idRegister)")
         }
     }
 }
