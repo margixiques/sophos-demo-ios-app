@@ -34,28 +34,14 @@ struct MenuButtonView: View {
                 } label: {
                     Text("Oficinas")
                 }
-                Button("Modo nocturno", action: darkMode)
-                Button("Idioma Inglés", action: englishLanguage)
-                Button {
-                self.navigateTo = AnyView(LoginView())
-                self.isNavigationActive = true
-            } label: {
-                Text("Cerrar sesión")
-            }
-                //("Cerrar sesión", action: logout)
             } label: {
                 Image(systemName: "list.dash")
-                    
             }
             .overlay(
                 NavigationLink(destination: AnyView(self.navigateTo), isActive: $isNavigationActive) {
                     EmptyView()
                 })
     }
-    
-    func darkMode() { }
-    func englishLanguage() { }
-    func logout() { }
 }
 
 struct TopView_Previews: PreviewProvider {

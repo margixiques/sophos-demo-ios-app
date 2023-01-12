@@ -13,7 +13,6 @@ struct WatchDocImageView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    
     var body: some View {
 
         NavigationStack{

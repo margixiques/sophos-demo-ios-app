@@ -43,7 +43,7 @@ struct PersonalInfo {
     
     @Published var personalInfo = PersonalInfo()
     @Published var showProgressView = false
-    @Published var put = Put(put: false)
+    @Published var showAlert = false
     
     private func setImage() async {
         personalInfo.uiImage = UIImage(data: personalInfo.imageData ?? Data())
@@ -70,7 +70,6 @@ struct PersonalInfo {
             return
         }
         
-        
         // send request to server
         let url = Endpoint.sendDoc.url
         var urlRequest = URLRequest(url: url)
@@ -82,23 +81,31 @@ struct PersonalInfo {
         Task{
             do {
                 let (data, response) = try await URLSession.shared.upload(for: urlRequest, from: encoded)
-
-                // handle the result
+                
+                if let decodedResponse = try? JSONDecoder().decode(Put.self, from: data) {
+                    if decodedResponse.put == true {
+                        showAlert = true
+                    }
+                }
+                
+                guard (response as? HTTPURLResponse)?.statusCode == 200
+                else { fatalError("Error while post Document") }
+                
             } catch {
                 print("Checkout failed.")
             }
+            showProgressView = false
         }
-        
-    
     }
     
     func actionButton() async {
         showProgressView = true
         await setImage()
         await postDocument()
-        showProgressView = false
+       
     }
 }
+
 
 
 

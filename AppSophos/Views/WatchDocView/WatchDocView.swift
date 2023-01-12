@@ -18,7 +18,7 @@ struct WatchDocView: View {
                 Text("Documentos")
                     .font(.title3)
                     .fontWeight(.heavy)
-
+                
                 Spacer()
                 
                 List(vm.items, id: \.idRegister) { item in
@@ -30,15 +30,11 @@ struct WatchDocView: View {
                             Text(vm.getDate(from: item.date) + " - " + item.attachmentType)
                                 .padding(.bottom, 10)
                             Text(item.name + " " + item.lastname)
-                
                         }
                         .padding()
                         .font(.subheadline)
                     }
-
-                   
                 }
-                
             }
         } .navigationBarBackButtonHidden(true)
             .onAppear {

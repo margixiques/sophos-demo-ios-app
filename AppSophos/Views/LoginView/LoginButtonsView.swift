@@ -22,7 +22,7 @@ struct LoginButtonsView: View {
                         let user = try await loginVM.login()
                         authentication.updateValidation(success: user.access)
                     } catch {
-                       //fatalError()
+                       fatalError()
                     }
                 }
             } label: {
@@ -38,7 +38,6 @@ struct LoginButtonsView: View {
                     .fill(Color("textColorPurple"))
             )
             .padding(.top, 39)
-            //.disabled(loginVM.loginDisabled)
             
             Button {
                 authentication.requestBiometricUnlock { (result: Result<Credentials, Authentication.AuthenticationError>) in
@@ -52,7 +51,6 @@ struct LoginButtonsView: View {
                             } catch {
                                 
                             }
-                            
                         }
                     case .failure(let error):
                         loginVM.error = error
@@ -74,8 +72,6 @@ struct LoginButtonsView: View {
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
                     .strokeBorder(Color("textColorPurple"))
-                
-                
             )
             .padding(.top, 19)
         }

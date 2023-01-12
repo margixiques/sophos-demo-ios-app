@@ -12,10 +12,7 @@ import MapKit
 struct OfficesView: View {
     
     @StateObject var manager = LocationManager()
-    //@ObservedObject var vm = OfficesViewModel()
-    
     @State var tracking: MapUserTrackingMode = .none
-    
     @State var offices: [Office] = []
     
     var body: some View {

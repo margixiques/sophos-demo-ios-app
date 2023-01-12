@@ -30,8 +30,6 @@ struct SendDocHeaderView: View {
                 .fontWeight(.heavy)
                 .foregroundColor(Color("textColorPurple"))
                 .padding()
-            
-           
         }
     }
 }

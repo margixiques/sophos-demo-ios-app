@@ -49,7 +49,6 @@ struct SendDocView: View {
                         Task{
                             await vm.actionButton()
                         }
-                       
                     } label: {
                         Text("Enviar")
                     }
@@ -62,9 +61,9 @@ struct SendDocView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(Color("colorPink"))
                     ).padding(.top, 30)
-                    
-                
-                    
+                        .alert(isPresented: $vm.showAlert){
+                            Alert(title: Text("Success Post"))
+                        }
                 }.padding(.horizontal, 20)
             }
         }.navigationBarBackButtonHidden(true)

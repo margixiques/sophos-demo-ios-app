@@ -40,8 +40,4 @@ struct SendDocIdTypeView: View {
 }
 
 
-//struct IdMenuView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SendDocIdTypeView(docType: "Tipo de documento")
-//    }
-//}
+

@@ -13,14 +13,12 @@ import SwiftUI
     @Published var showProgressView = false
     @Published var error: Authentication.AuthenticationError?
     @Published var storeCredentialsNext = false
-    
     @EnvironmentObject var authentication: Authentication
     
     var loginDisabled: Bool {
         credentials.email.isEmpty || credentials.password.isEmpty
     }
 
-    
     private func saveName(_ name: String) {
         UserDefaults.standard.set(name, forKey: "userName")
     }
@@ -41,11 +39,9 @@ import SwiftUI
         let url = Endpoint.user(email: credentials.email, password: credentials.password).url
         
         let (data, response) = try await URLSession.shared.data(from: url)
-         
-    
         
-//        guard (response as? HTTPURLResponse)?.statusCode == 200
-//        else { fatalError("Error while fetching data") }
+        guard (response as? HTTPURLResponse)?.statusCode == 200
+        else { fatalError("Error while login") }
         
         let user = try JSONDecoder().decode(User.self, from: data)
         if user.access == false {

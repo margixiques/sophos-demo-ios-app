@@ -25,13 +25,12 @@ class WatchDocImageViewModel: ObservableObject {
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
             
-            let documentList = try JSONDecoder().decode(DocumentList.self, from: data)
-            getImage(from: documentList.items[0].attachment)
+            let resultDocument = try JSONDecoder().decode(ResultDocumentId.self, from: data)
+            getImage(from: resultDocument.items[0].attachment)
             
         } catch {
             print("Invalid data")
         }
-    
     }
     
     private func getImage(from base64String: String) {

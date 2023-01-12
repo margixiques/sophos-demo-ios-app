@@ -103,86 +103,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "730EFDEA-A17F-4444-917F-42ED837AE1CB"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppSophos/ViewModel/SendDocViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "actionButton()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "730EFDEA-A17F-4444-917F-42ED837AE1CB - 67b1f5f846bda1c2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AppSophos.SendDocViewModel.actionButton() async throws -&gt; ()"
-                  moduleName = "AppSophos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/margi/Sophos/Reto%20Final/AppSophos/AppSophos/ViewModel/SendDocViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "103"
-                  endingLineNumber = "103"
-                  offsetFromSymbolStart = "84">
-               </Location>
-               <Location
-                  uuid = "730EFDEA-A17F-4444-917F-42ED837AE1CB - d4035fdb668472cc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) await resume partial function for AppSophos.SendDocViewModel.actionButton() async throws -&gt; ()"
-                  moduleName = "AppSophos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/margi/Sophos/Reto%20Final/AppSophos/AppSophos/ViewModel/SendDocViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "103"
-                  endingLineNumber = "103"
-                  offsetFromSymbolStart = "64">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3EAC4429-BA02-4CF1-AF72-C57900120341"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppSophos/ViewModel/SendDocViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "setImage()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "35B1B6A9-3B69-43C9-8C79-B805A5243945"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppSophos/ViewModel/SendDocViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "postDocument()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A0A53F0B-F39F-4E51-87C5-3CF724867C31"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -199,70 +119,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DFE00EDE-5D74-4DB1-AB12-0A19BC6D3E8F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppSophos/ViewModel/SendDocViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "postDocument()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "DFE00EDE-5D74-4DB1-AB12-0A19BC6D3E8F - 78e270fbb7deac2b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for AppSophos.SendDocViewModel.postDocument() async -&gt; ()"
-                  moduleName = "AppSophos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/margi/Sophos/Reto%20Final/AppSophos/AppSophos/ViewModel/SendDocViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "1556">
-               </Location>
-               <Location
-                  uuid = "DFE00EDE-5D74-4DB1-AB12-0A19BC6D3E8F - eca8ae17d11bfc68"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable () async -&gt; () in AppSophos.SendDocViewModel.postDocument() async -&gt; ()"
-                  moduleName = "AppSophos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/margi/Sophos/Reto%20Final/AppSophos/AppSophos/ViewModel/SendDocViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "172">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "99664AA1-9DF7-43FE-BFF1-C5DE40C27CFA"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppSophos/ViewModel/SendDocViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "postDocument()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "652063DC-5001-4CBA-8EBE-E9DE307E0B54"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -270,8 +126,8 @@
             filePath = "AppSophos/Views/Offices/OfficesView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -286,8 +142,8 @@
             filePath = "AppSophos/Views/Offices/OfficesView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "readFile()"
             landmarkType = "7">
          </BreakpointContent>
@@ -412,8 +268,8 @@
             filePath = "AppSophos/ViewModel/WatchDocImageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "getImage(from:)"
             landmarkType = "7">
          </BreakpointContent>
