@@ -29,18 +29,18 @@ struct SendDocPickerPhotoView: View {
                     
                     Button {
                         
-                        showingPhotosPicker.toggle()
-                        
-                    } label: {
-                        Text("Cargar foto")
-                    }
-                    
-                    Button {
-                        
                         showingCameraView.toggle()
                         
                     } label: {
                         Text("Tomar foto")
+                    }
+                    
+                    Button {
+                        
+                        showingPhotosPicker.toggle()
+                        
+                    } label: {
+                        Text("Cargar foto")
                     }
                     
                 } label: {

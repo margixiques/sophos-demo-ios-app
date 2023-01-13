@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct BiometricButtonStyle: View {
+    
     @EnvironmentObject var authentication: Authentication
+    
     var body: some View {
+        
         HStack {
+            
             Image(systemName: authentication.biometricType() == .face ? "faceid" : "touchid")
                 .tint(Color("textColorPurple"))
                 .padding(.trailing, 23)

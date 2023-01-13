@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct LoginHeaderView: View {
+    
     var body: some View {
+        
         VStack {
+            
             Image("sophosLogin")
                 .padding(.horizontal, 50)
                 .padding(.bottom, 20)

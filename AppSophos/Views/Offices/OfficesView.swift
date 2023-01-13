@@ -16,7 +16,9 @@ struct OfficesView: View {
     @State var offices: [Office] = []
     
     var body: some View {
+        
         NavigationStack {
+            
             VStack (spacing: 20){
                 
                 SendDocHeaderView()

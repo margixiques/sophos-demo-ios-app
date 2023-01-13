@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 @MainActor class LoginViewModel: ObservableObject {
+    
     @Published var credentials = Credentials()
     @Published var showProgressView = false
     @Published var error: Authentication.AuthenticationError?
@@ -16,14 +17,17 @@ import SwiftUI
     @EnvironmentObject var authentication: Authentication
     
     var loginDisabled: Bool {
+        
         credentials.email.isEmpty || credentials.password.isEmpty
     }
 
     private func saveName(_ name: String) {
+        
         UserDefaults.standard.set(name, forKey: "userName")
     }
     
     func performLogin() {
+        
         Task {
             do {
                 let user = try await login()
@@ -35,6 +39,7 @@ import SwiftUI
     }
     
      func login() async throws -> User {
+         
         showProgressView = true
         let url = Endpoint.user(email: credentials.email, password: credentials.password).url
         

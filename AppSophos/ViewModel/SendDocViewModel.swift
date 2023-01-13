@@ -46,6 +46,7 @@ struct PersonalInfo {
     @Published var showAlert = false
     
     private func setImage() async {
+        
         personalInfo.uiImage = UIImage(data: personalInfo.imageData ?? Data())
         personalInfo.imageData = personalInfo.uiImage?.jpegData(compressionQuality: 0.0) ?? Data()
     }
@@ -79,6 +80,7 @@ struct PersonalInfo {
         
         // send the request
         Task{
+            
             do {
                 let (data, response) = try await URLSession.shared.upload(for: urlRequest, from: encoded)
                 
@@ -99,6 +101,7 @@ struct PersonalInfo {
     }
     
     func actionButton() async {
+        
         showProgressView = true
         await setImage()
         await postDocument()

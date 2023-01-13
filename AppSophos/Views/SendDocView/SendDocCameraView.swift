@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct SendDocCameraView: View {
-    @StateObject var camera = CameraModel()
+    @StateObject var camera = SendDocCameraViewModel()
     
     var body: some View {
+        
         ZStack{
-            
             CameraPreview(camera: camera)
                 .ignoresSafeArea()
+            
             VStack{
                 
                 if camera.isTaken{

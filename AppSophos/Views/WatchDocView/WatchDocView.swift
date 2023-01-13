@@ -12,13 +12,15 @@ struct WatchDocView: View {
     @ObservedObject var vm = WatchDocViewModel()
     
     var body: some View {
+        
         NavigationStack {
+            
             VStack (spacing: 20){
+                
                 SendDocHeaderView()
                 Text("Documentos")
                     .font(.title3)
                     .fontWeight(.heavy)
-                
                 Spacer()
                 
                 List(vm.items, id: \.idRegister) { item in

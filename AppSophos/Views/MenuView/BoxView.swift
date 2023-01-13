@@ -11,10 +11,8 @@ struct BoxView: View {
    
    let menuType: MenuType
     
-    
    var body: some View {
    
-       
       VStack (spacing: 15) {
          
          HStack {
@@ -35,7 +33,6 @@ struct BoxView: View {
                  Text("Ingresar")
                     .font(.caption2)
                  Image(systemName: "arrow.forward")
-                    
               }
               .overlay(
               RoundedRectangle(cornerRadius: 10)
@@ -43,8 +40,7 @@ struct BoxView: View {
                  .frame(width: 100, height: 28)
               )
            } .offset(x: 110, y: 0)
-
-
+          
       }.overlay(
          RoundedRectangle(cornerRadius: 10)
             .strokeBorder()

@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct SendDocIdView: View {
+    
     @Binding var identification: String
+    
     var body: some View {
+        
         HStack{
             Image(systemName: "person.text.rectangle")
                 .resizable()

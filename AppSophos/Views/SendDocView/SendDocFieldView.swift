@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct SendDocFieldView: View {
+    
     @Binding var text: String
     var title: String = ""
+    
     var body: some View {
+        
         VStack {
             TextField(title,
                       text: $text)

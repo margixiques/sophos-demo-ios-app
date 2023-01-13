@@ -75,7 +75,7 @@ struct LoginView: View {
                                         let user = try await loginVM.login()
                                         authentication.updateValidation(success: user.access)
                                     } catch {
-                                        
+                                        fatalError()
                                     }
                                 }
                             case .failure(let error):

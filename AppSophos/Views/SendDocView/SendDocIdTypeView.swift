@@ -12,6 +12,7 @@ struct SendDocIdTypeView: View {
     @Binding var docType: String
     
     var body: some View {
+        
         HStack {
             
             if docType.isEmpty {
@@ -19,8 +20,8 @@ struct SendDocIdTypeView: View {
             } else {
                 Text(docType)
             }
-            
             Spacer()
+            
             Menu {
                 
                 ForEach(DocType.allCases, id: \.rawValue) { type in

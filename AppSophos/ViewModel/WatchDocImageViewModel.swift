@@ -20,6 +20,7 @@ class WatchDocImageViewModel: ObservableObject {
     }
     
     func fetchDocument() async throws {
+        
         let url = Endpoint.getDocByIdRegister(idRegister: idRegister).url
         
         do {
@@ -34,6 +35,7 @@ class WatchDocImageViewModel: ObservableObject {
     }
     
     private func getImage(from base64String: String) {
+        
         guard let imageData = Data(base64Encoded: base64String) else { return }
         image = UIImage(data: imageData)
     }

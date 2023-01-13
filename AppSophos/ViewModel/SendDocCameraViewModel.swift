@@ -1,5 +1,5 @@
 //
-//  CameraModel.swift
+//  SendDocCameraViewModel.swift
 //  AppSophos
 //
 //  Created by Margarita Xiques on 11/01/23.
@@ -9,7 +9,8 @@ import Foundation
 import AVFoundation
 import SwiftUI
 
-class CameraModel : NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
+class SendDocCameraViewModel : NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
+    
     @Published var isTaken = false
     @Published var session = AVCaptureSession()
     @Published var alert = false
@@ -40,6 +41,7 @@ class CameraModel : NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     }
     
     func setUp(){
+        
         do{
             self.session.beginConfiguration()
          
@@ -65,13 +67,13 @@ class CameraModel : NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     }
     
     func takePic(){
+        
          self.output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
          DispatchQueue.global(qos: .background).async {
              self.session.stopRunning()
              DispatchQueue.main.async {
                  withAnimation{
                      self.isTaken.toggle()
- 
                  }
              }
          }
@@ -86,14 +88,14 @@ class CameraModel : NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
                      self.isTaken.toggle()
  
                  }
-                     self.isSaved=false
-                     self.picData=Data(count: 0)
- 
+                     self.isSaved = false
+                     self.picData = Data(count: 0)
              }
          }
      }
  
      func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+         
          if error != nil{
              return
          }
@@ -108,18 +110,19 @@ class CameraModel : NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
          guard let image = UIImage(data: self.picData) else{return}
          //saving image
          UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-         self.isSaved=true
+         self.isSaved = true
          print("pic saved")
      }
  
 }
 
 struct CameraPreview : UIViewRepresentable{
-    @ObservedObject var camera : CameraModel
+    
+    @ObservedObject var camera : SendDocCameraViewModel
     
     func makeUIView(context:Context) -> UIView {
         
-        let view = UIView(frame:UIScreen.main.bounds)
+        let view = UIView(frame: UIScreen.main.bounds)
         camera .preview = AVCaptureVideoPreviewLayer(session: camera.session)
         camera.preview.frame = view.frame
         camera.preview.videoGravity = .resizeAspectFill
